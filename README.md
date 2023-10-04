@@ -19,10 +19,18 @@ never-ending subjective quest of searching identity is the search for the perfec
 
 On the computer, the way we interact and the identity we perform can be vastly different.
 
-
-
 ## Storyboard:
+![storyboard img](./art-source/nsp_storyboard-6.png)
 
+![storyboard img](./art-source/nsp_storyboard-1.png)
+
+![storyboard img](./art-source/nsp_storyboard-2.png)
+
+![storyboard img](./art-source/nsp_storyboard-3.png)
+
+![storyboard img](./art-source/nsp_storyboard-4.png)
+
+![storyboard img](./art-source/nsp_storyboard-5.png)
 
 ## References:
 - [Why Doesn't the Industry Make Good Girls' Games?](https://www.youtube.com/watch?v=-BtmNI-xTbQ)
@@ -37,8 +45,6 @@ On the computer, the way we interact and the identity we perform can be vastly d
 	- Style and vibes.
 - [Pony Island](https://store.steampowered.com/app/405640/Pony_Island/)
 	- Challenges Interaction design tropes & plays with user expectations.
-
-
 ## Ideation:
 ![ideation-1.png](./process/images/ideation-1.png)
 
