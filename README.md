@@ -21,8 +21,9 @@ Even with all those liberties, some games or social media platforms still rely o
 
 This counter-cultural and unconventional digital space will be destabilizing for various reasons. We want to throw out the window all those binary options and traditional ways to create an avatar that will truly reflect the user’s physical image. Instead, the user will navigate hazardly between complex options and diagrams, with no idea of how it will affect the three dimensional avatar that he is modeling. 
 
-We want the user to reflect on how complex and sometimes unpredictable things affect the creation of our identities, and that it’s okay. The user will never reach perfection, they will simply reach something that they like, and that they will be able to continue to model indefinitely. We simply want the user to enjoy exploring their own likes and dislikes, spend time modeling and representing an image they like using the tools and expressing their creativity.
+The overarching aim is to prompt users to reflect on how complex and sometimes unpredictable factors affect the creation of our identities. We strive to convey that imperfection is not only acceptable but perhaps even preferable. Perfection is an elusive goal; instead, users are encouraged to arrive at something they genuinely appreciate, something they can continually refine and mold indefinitely, something uniquely personal. The objective is to foster an environment where the user is free to enjoy exploring their own likes and dislikes, and to dedicate their time to the art of modeling and the expression of their boundless creativity. It's a sanctuary for self-discovery, where the journey itself becomes the destination.
 
+3. 
 
 “[...] Three contingent dimensions of significant corporeality: anatomical sex, gender identity, and gender performance.” - Judith Butler
 
