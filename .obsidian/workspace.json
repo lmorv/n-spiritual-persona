@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "728412a16e7c5155",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "9f5b49d33c977b5e",
@@ -159,10 +146,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "728412a16e7c5155",
+  "active": "0f48ce7effc9e1f8",
   "lastOpenFiles": [
     "process/images/moodboard-1.png",
     "process/images/ideation-1.png",
+    "process/leo-why.md",
+    "process/leo-todo.md",
+    "process/leo-journal.md",
     "README.md",
     "Untitled.md",
     "process/images"

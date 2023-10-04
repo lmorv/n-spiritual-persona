@@ -4,16 +4,22 @@ A silly and empowering non-binary character creator on the web!
 
 n-spiritual persona is a character creator/ personality test that aims to celebrate the plurality of gender identity as it is performed online, trough videogames and networked spaces. The user can customize a 3D character along a spectrum of gender dimensions, imbuing it with personality traits that expand, empower and even destabilize to gain greater understanding of their conception of their own identity and performed gender online and in real life.
 
-“If the inner truth of gender is a fabrication and if a true gender is a fantasy instituted and inscribed on the surface of bodies, then it seems that gender can neither be true or false [...]”
 
-“[...] Three contingent dimentions of significant corporeality: anatomical sex, gender identity, and gender performance.” - Judith Butler
+*“If the inner truth of gender is a fabrication and if a true gender is a fantasy instituted and inscribed on the surface of bodies, then it seems that gender can neither be true or false [...]” *
+Butler, Judith. Essay. In _Gender Trouble: Feminism and the Subversion of Identity_, 171–80. Routledge, 1989.
 
-the body is symbolic 
-no identity without the socially constructed body.   the body is realized from bearenss and bearingness  
-never-ending subjective quest of searching identity  
-  
-self help book self improvement -- onloads everything onto you as an individual  
-self instruction is the search for the perfect image of the self AND an image of the self that would be eligible, understandable by others
+Identity is a never-ending and subjective search. 
+
+
+The body is a socially constructed concept, realized from bearenss and bearingness, association and dissociation to groups, ideals, images.
+
+never-ending subjective quest of searching identity is the search for the perfect image of the self AND an image of the self that would be eligible, understandable by others
+
+“[...] Three contingent dimensions of significant corporeality: anatomical sex, gender identity, and gender performance.” - Judith Butler
+
+On the computer, the way we interact and the identity we perform can be vastly different.
+
+
 
 ## Storyboard:
 
