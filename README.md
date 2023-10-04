@@ -29,10 +29,18 @@ The overarching aim is to prompt users to reflect on how complex and sometimes u
 
 
 
-
-
 ## Storyboard:
+![storyboard img](./art-source/nsp_storyboard-6.png)
 
+![storyboard img](./art-source/nsp_storyboard-1.png)
+
+![storyboard img](./art-source/nsp_storyboard-2.png)
+
+![storyboard img](./art-source/nsp_storyboard-3.png)
+
+![storyboard img](./art-source/nsp_storyboard-4.png)
+
+![storyboard img](./art-source/nsp_storyboard-5.png)
 
 ## References:
 - [Why Doesn't the Industry Make Good Girls' Games?](https://www.youtube.com/watch?v=-BtmNI-xTbQ)
@@ -47,8 +55,6 @@ The overarching aim is to prompt users to reflect on how complex and sometimes u
 	- Style and vibes.
 - [Pony Island](https://store.steampowered.com/app/405640/Pony_Island/)
 	- Challenges Interaction design tropes & plays with user expectations.
-
-
 ## Ideation:
 ![ideation-1.png](./process/images/ideation-1.png)
 
