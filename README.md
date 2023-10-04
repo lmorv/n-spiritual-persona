@@ -4,20 +4,29 @@ A silly and empowering non-binary character creator on the web!
 
 n-spiritual persona is a character creator/ personality test that aims to celebrate the plurality of gender identity as it is performed online, trough videogames and networked spaces. The user can customize a 3D character along a spectrum of gender dimensions, imbuing it with personality traits that expand, empower and even destabilize to gain greater understanding of their conception of their own identity and performed gender online and in real life.
 
+---------------------
+1. Identity is a never-ending and subjective search that concerns all of us.
 
-*“If the inner truth of gender is a fabrication and if a true gender is a fantasy instituted and inscribed on the surface of bodies, then it seems that gender can neither be true or false [...]” *
+	*“If the inner truth of gender is a fabrication and if a true gender is a fantasy instituted and inscribed on the surface of bodies, then it seems that gender can neither be true or false [...]” *
 Butler, Judith. Essay. In _Gender Trouble: Feminism and the Subversion of Identity_, 171–80. Routledge, 1989.
 
-Identity is a never-ending and subjective search. 
+It is interesting to study how individuals increasingly embrace the act of defying conventions, creating performed identities in a quest to create a self that  will both be like by the individual and truly reflects the image that they want to convey to others, in a language that is still understandable to them.
 
+On the internet, identities can take many forms; pseudonyms, online discourse or avatars. These fictional personas can be truly empowering, and can vary depending on the community, the virtual space and the image one wants to share with others and they are an important element of this dynamic and evolving digital culture. Online, individuals can perform identities free of the constraints of gender norms, social hierarchies, or physical attributes. When modeled in 3D, even gravity does not affect the garments we wear, and you don't even have to be confined as a human form. It can be a liberating experience to use the internet to explore one’s interests as a form of artistic expression in an anonymous context.
 
-The body is a socially constructed concept, realized from bearenss and bearingness, association and dissociation to groups, ideals, images.
+Even with all those liberties, some games or social media platforms still rely on very traditional character creation methods and offer only simplistic binary options. If limitless character creation is enjoyed by everyone, what would it look like if the character creation would reflect the complexity of creating an identity to perform in different online contexts? What kind of characters would be created if the parameters would transcend norms?
 
-never-ending subjective quest of searching identity is the search for the perfect image of the self AND an image of the self that would be eligible, understandable by others
+------------------------------
+2. Users will use the virtual space to explore various avatars in a destabilizing context.
+
+This counter-cultural and unconventional digital space will be destabilizing for various reasons. We want to throw out the window all those binary options and traditional ways to create an avatar that will truly reflect the user’s physical image. Instead, the user will navigate hazardly between complex options and diagrams, with no idea of how it will affect the three dimensional avatar that he is modeling. 
+
+We want the user to reflect on how complex and sometimes unpredictable things affect the creation of our identities, and that it’s okay. The user will never reach perfection, they will simply reach something that they like, and that they will be able to continue to model indefinitely. We simply want the user to enjoy exploring their own likes and dislikes, spend time modeling and representing an image they like using the tools and expressing their creativity.
+
 
 “[...] Three contingent dimensions of significant corporeality: anatomical sex, gender identity, and gender performance.” - Judith Butler
 
-On the computer, the way we interact and the identity we perform can be vastly different.
+
 
 
 
