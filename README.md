@@ -46,7 +46,7 @@ The satirical tone in this character creation tool is meant to be aimed in the d
 	-  A video essay about gendered games, the historical re-enforcement of stereotypes in triple-A games, the misinterpretation of market data by the videogame industry about what girls want in games, and the game-mechanical essence of playing dress-up in both games marketed to boys and those marketed to girls. Also a lot more than that, including the efforts of indie developers and players to create better games for girls, and the celebration of engaging and 'good' games marketed to girls.
 	
 - [Eorzea Collection | Glamours Collection ](https://ffxiv.eorzeacollection.com/glamours)
-	- An online community gallery dedicated to sharing and celebrating the fashion choices of players in Final Fantasy XIV.
+	- An online community gallery dedicated to sharing and celebrating the fashion choices of players in Final Fantasy XIV. 
 	
 - [Find Out Your Type Of Peeps](https://event.designexpo.org.tw/en/)
 	- A whimsical, mystical personality test from the Taiwan Design Expo. Inspiration for it's wholesome tone and engaging personality trait distillation, as well as it's abstract 'narrative' mechanics. 
@@ -63,6 +63,8 @@ The satirical tone in this character creation tool is meant to be aimed in the d
 	
 - [Pony Island](https://store.steampowered.com/app/405640/Pony_Island/)
 	- Inspiration for it's reversal of Interaction design tropes & the way it plays with player expectations.
+
+By drawing inspiration from all of theses resources, we hope to create a fun angle to gender theory, embracing experimentation and unpredictability. In our character creator, everybody is invited to be creative and play dress-up!
 ## Ideation:
 ![ideation-1.png](./process/images/ideation-1.png)
 
