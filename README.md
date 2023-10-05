@@ -28,8 +28,6 @@ The overarching aim is to prompt users to reflect on how complex and sometimes u
 
 The satirical tone in this character creation tool is meant to be aimed in the direction of normative, binary, views on gender. The n-spiritual persona character creator seeks to foster a wholesome atmosphere and a safe space for exploration. One that while remaining silly, comedic and even weird, also respects the lived experience of 2SLGBTQ+ individuals. It's mechanisms of representation, while being largely unpredictable and subversive, seek to offer a means of expression and reflection for anyone exploring their gender identity online.
 
-“[...] Three contingent dimensions of significant corporeality: anatomical sex, gender identity, and gender performance.” - Judith Butler 
-
 ## Storyboard:
 ![storyboard img](./art-source/nsp_storyboard-6.png)
 
@@ -54,7 +52,8 @@ The satirical tone in this character creation tool is meant to be aimed in the d
 	- A whimsical, mystical personality test from the Taiwan Design Expo. Inspiration for it's wholesome tone and engaging personality trait distillation, as well as it's abstract 'narrative' mechanics. 
 	
 - [Gender Trouble | Book by Judith Butler](https://en.wikipedia.org/wiki/Gender_Trouble)
-	- Gender theory discourse. Social theory background.
+	- Judith Butler is an important philosopher in the world of gender studies. Their research were influential in the world of cultural theory, queer theory and feminism. In their book gender trouble, they present the idea of a preformed gender separated from anatomical sex or gender identity.
+	- We draw inspiration from Butler's theory that gender is not an internal, fixed attribute, but rather constructed from repeated behaviors over time. These behaviors would shape our perception of what is "feminine" or "masculine" and play an important role in the shaping of our gender and identities.
 	
 -  [Hypnospace Outlaw](https://store.steampowered.com/app/844590/Hypnospace_Outlaw/)
 	- Chosen as reference mainly for its classic net-art and 3D graphic style. More generally inspiring for its internet navigation style interfaces, and narrative themes related to online identity.
