@@ -19,7 +19,7 @@ Even with all those liberties, some games or social media platforms still rely o
 ------------------------------
 2. **Users will use the virtual space to explore various avatars in a destabilizing context.**
 
-This counter-cultural and unconventional digital space will be destabilizing for various reasons. We want to throw out the window all those binary options and traditional ways to create an avatar that will truly reflect the user’s physical image. Instead, the user will navigate hazardly between complex options and diagrams, with no idea of how it will affect the three dimensional avatar that he is modeling. 
+This counter-cultural and unconventional digital space will be destabilizing for various reasons. We want to throw out the window all those binary options and traditional ways to create an avatar that will truly reflect the user’s physical image. Instead, the user will navigate haphazardly between complex options and diagrams, with no idea of how it will affect the three dimensional avatar that he is modeling. 
 
 The overarching aim is to prompt users to reflect on how complex and sometimes unpredictable factors affect the creation of our identities. We strive to convey that imperfection is not only acceptable but perhaps even preferable. Perfection is an elusive goal; instead, users are encouraged to arrive at something they genuinely appreciate, something they can continually refine and mold indefinitely, something uniquely personal. The objective is to foster an environment where the user is free to enjoy exploring their own likes and dislikes, and to dedicate their time to the art of modeling and the expression of their boundless creativity. It's a sanctuary for self-discovery, where the journey itself becomes the destination.
 
