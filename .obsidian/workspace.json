@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 225.5,
+    "collapsed": true
   },
   "right": {
     "id": "9f5b49d33c977b5e",
@@ -149,19 +150,16 @@
   "active": "0f48ce7effc9e1f8",
   "lastOpenFiles": [
     "art-source/nsp_storyboard-6.png",
-    "art-source/nsp_storyboard-5.png",
-    "art-source/nsp_storyboard-4.png",
     "art-source/nsp_storyboard-3.png",
     "art-source/nsp_storyboard-2.png",
+    "README.md",
     "art-source/nsp_storyboard-1.png",
-    "art-source/n-spriritual_Storyboard.psd",
-    "art-source",
+    "art-source/nsp_storyboard-5.png",
     "process/images/moodboard-1.png",
     "process/images/ideation-1.png",
     "process/leo-why.md",
     "process/leo-todo.md",
     "process/leo-journal.md",
-    "README.md",
     "Untitled.md",
     "process/images"
   ]
