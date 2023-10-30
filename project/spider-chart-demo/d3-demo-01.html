@@ -1,0 +1,32 @@
+
+<!-- Made following this tutorial by DANNY YANG: https://yangdanny97.github.io/blog/2019/03/01/D3-Spider-Chart -->
+
+<!DOCTYPE html>
+<html>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <body>
+    </body>
+    <script>
+
+// Generate fake data:
+let data = [];
+let features = ["A", "B", "C", "D", "E", "F"];
+//generate the data
+for (var i = 0; i < 3; i++){
+    var point = {}
+    //each feature will be a random number from 1-9
+    features.forEach(f => point[f] = 1 + Math.random() * 8);
+    data.push(point);
+}
+console.log(data);
+
+// Use d3.select to create an SVG element in the body. This is where our chart is gonna live
+let width = 600;
+let height = 600;
+let svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+
+    </script>
+</html>
