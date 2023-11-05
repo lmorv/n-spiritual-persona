@@ -5,14 +5,80 @@ import { OrbitControls } from "three/addons/OrbitControls.js";
 import { FirstPersonControls } from "three/addons/FirstPersonControls.js";
 import { GUI } from "three/addons/libs/lil-gui.module.min.js";
 
-//----------------Scene and camera------------------
-const scene = new THREE.Scene();                    //create a scene
+window.onload = function () {
+
+	let scene;
+	let camera;
+	let renderer;
+	let model;
+	let gui;
+  const state = { variant: "Default" };
+
+  const MODEL_PATH = "3dassets/body.glb";
+
+  init();
+
+  //select variant from the tutorial
+  function selectVariant(scene, parser, extension, variantName) {
+    const variantIndex = extension.variants.findIndex((v) =>
+      v.name.includes(variantName)
+    );
+
+    scene.traverse(async (object) => {
+      if (!object.isMesh || !object.userData.gltfExtensions) return;
+
+      const meshVariantDef =
+        object.userData.gltfExtensions["KHR_materials_variants"];
+
+      if (!meshVariantDef) return;
+
+      if (!object.userData.originalMaterial) {
+        object.userData.originalMaterial = object.material;
+      }
+
+      const mapping = meshVariantDef.mappings.find((mapping) =>
+        mapping.variants.includes(variantIndex)
+      );
+
+      if (mapping) {
+        object.material = await parser.getDependency(
+          "material",
+          mapping.material
+        );
+        parser.assignFinalMaterial(object);
+      } else {
+        object.material = object.userData.originalMaterial;
+      }
+
+      render();
+    });
+  }
+
+
+
+
+
+
+//-----------------Initialize-----------------
+function init() {
+	const canvas = document.querySelector("#c");
+
+//----------------Scene, Renderer-----------------
+scene = new THREE.Scene();                    //create a scene
 scene.background = new THREE.Color(0xaaaaaa);
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); //create perspectivecamera Constructor(Field of view, aspect ratio, near plane, far plane) will define view frustum
+//scene.fog = new THREE.Fog(backgroundColor, 60, 100);
+
+renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.shadowMap.enabled = true;
+renderer.setPixelRatio(window.devicePixelRatio);
+document.body.appendChild(renderer.domElement);
+
+//----------------------Camera------------------
+camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); //create perspectivecamera Constructor(Field of view, aspect ratio, near plane, far plane) will define view frustum
 camera.position.z = 30;
 camera.position.x = 0;
 camera.position.y = -3;
-const renderer = new THREE.WebGLRenderer();         //Does the math for you :) (some optional parameters)
+renderer = new THREE.WebGLRenderer();         //Does the math for you :) (some optional parameters)
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );   //domElement corresponds to the canvas
 
@@ -28,7 +94,7 @@ let hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1.0);
 hemiLight.position.set(0, 50, 0);
 scene.add(hemiLight);
 
-//From Sabine's example
+//From Sabine's example... not sure how to change it.
 let d = 8.25;
 let dirLight = new THREE.DirectionalLight(0xffffff, 5.0);
 dirLight.position.set(-8, 10, 8);
@@ -40,8 +106,15 @@ dirLight.shadow.camera.left = d * -1;
 dirLight.shadow.camera.right = d;
 dirLight.shadow.camera.top = d;
 dirLight.shadow.camera.bottom = d * -1;
-// Add directional Light to scene
-scene.add(dirLight);
+scene.add(dirLight);   // Add directional Light to scene
+
+
+//--------------
+// setEnvironment();
+// loadModel();
+update();
+}//init
+
 
 //---------------------GEOMETRIES---------------------
 
@@ -53,7 +126,7 @@ scene.add( cube );
 //Importing a 3D shape in the GLtf format (.glb or .gltf)
 var horn;
 const loader = new GLTFLoader();
-loader.load( '3dassets/horns.glb', function ( gltf ) { //gltf refers to '3dassets/horns.glb' that was loaded
+loader.load( '3dassets/body.glb', function ( gltf ) { //gltf refers to '3dassets/horns.glb' that was loaded
     horn = gltf.scene;
 	scene.add( horn );
 }, undefined, function ( error ) {
@@ -61,14 +134,47 @@ loader.load( '3dassets/horns.glb', function ( gltf ) { //gltf refers to '3dasset
 } );
 
 
+//-------------Render-------------
+  function render() {
+    renderer.render(scene, camera);
+  }
 
+  //-------------Update---------------
+  function update() {
+    // in case resize window
+    if (resizeRendererToDisplaySize(renderer)) {
+      console.log("resize");
+      const canvas = renderer.domElement;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+    render();
+    console.log("in update");
+  } //update
 
-// //not rendered yet
- function animate() {
- 	requestAnimationFrame( animate );            //wait for screen refresh, call animate again
-//     cube.rotation.x += 0.01;                     //Rotation is a function inside mesh?
-//     cube.rotation.y += 0.01;
-//     horn.rotation.y += 0.01;
- 	renderer.render( scene, camera );            //render!!!
-}
- animate();
+  //resize for window
+  function resizeRendererToDisplaySize(renderer) {
+    const canvas = renderer.domElement;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let canvasPixelWidth = canvas.width / window.devicePixelRatio;
+    let canvasPixelHeight = canvas.height / window.devicePixelRatio;
+
+    const needResize =
+      canvasPixelWidth !== width || canvasPixelHeight !== height;
+    if (needResize) {
+      renderer.setSize(width, height, false);
+    }
+    return needResize;
+  } //resize
+
+// // //not rendered yet
+//  function animate() {
+//  	requestAnimationFrame( animate );            //wait for screen refresh, call animate again
+// //     cube.rotation.x += 0.01;                     //Rotation is a function inside mesh?
+// //     cube.rotation.y += 0.01;
+// //     horn.rotation.y += 0.01;
+//  	renderer.render( scene, camera );            //render!!!
+// }
+//  animate();
+}; //load
