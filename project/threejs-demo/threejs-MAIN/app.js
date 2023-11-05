@@ -3,7 +3,7 @@ import { GLTFLoader } from "three/addons/GLTFLoader.js";
 import { RGBELoader } from "three/addons/RGBELoader.js";
 import { OrbitControls } from "three/addons/OrbitControls.js";
 import { FirstPersonControls } from "three/addons/FirstPersonControls.js";
-import { GUI } from "three/addons/libs/lil-gui.module.min.js";
+import { GUI } from "three/addons/libs/lil-gui.module.min.js"; //Graphical user interface : side bar.
 
 window.onload = function () {
 
@@ -121,8 +121,8 @@ update();
   function setEnvironment() {
     new RGBELoader()
       .setDataType(THREE.HalfFloatType)
-      .setPath("3dassets")
-      .load("body.gltf", function (texture) {
+      .setPath("3dassets/")
+      .load("body.glb", function (texture) {
         texture.mapping = THREE.EquirectangularReflectionMapping;
 
         scene.environment = texture;
@@ -139,7 +139,6 @@ function loadModel() {
 
       model = gltf.scene;
       model.scale.set(1, 1, 1);
-
       model.position.set(0,0,0);
       scene.add(model);
 
