@@ -75,9 +75,9 @@ document.body.appendChild(renderer.domElement);
 
 //----------------------Camera------------------
 camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); //create perspectivecamera Constructor(Field of view, aspect ratio, near plane, far plane) will define view frustum
-camera.position.z = 30;
+camera.position.z = 5;
 camera.position.x = 0;
-camera.position.y = -3;
+camera.position.y = 3;
 renderer = new THREE.WebGLRenderer();         //Does the math for you :) (some optional parameters)
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );   //domElement corresponds to the canvas
@@ -110,28 +110,77 @@ scene.add(dirLight);   // Add directional Light to scene
 
 
 //--------------
-// setEnvironment();
-// loadModel();
+//setEnvironment();
+loadModel();
 update();
 }//init
 
 
 //---------------------GEOMETRIES---------------------
+  //to set up environment
+  function setEnvironment() {
+    new RGBELoader()
+      .setDataType(THREE.HalfFloatType)
+      .setPath("3dassets")
+      .load("body.gltf", function (texture) {
+        texture.mapping = THREE.EquirectangularReflectionMapping;
 
-//Creating box geometry
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );   //vertex
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );   //mesh
-scene.add( cube );
-//Importing a 3D shape in the GLtf format (.glb or .gltf)
-var horn;
-const loader = new GLTFLoader();
-loader.load( '3dassets/body.glb', function ( gltf ) { //gltf refers to '3dassets/horns.glb' that was loaded
-    horn = gltf.scene;
-	scene.add( horn );
-}, undefined, function ( error ) {
-	console.error( error );
-} );
+        scene.environment = texture;
+      });
+  }
+
+//to load the model
+function loadModel() {
+    let loader = new GLTFLoader();
+
+    loader.load(MODEL_PATH, function (gltf) {
+      // GUI
+      gui = new GUI();
+
+      model = gltf.scene;
+      model.scale.set(1, 1, 1);
+
+      model.position.set(0,0,0);
+      scene.add(model);
+
+      // Details of the KHR_materials_variants extension used here can be found below
+      // https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants
+      const parser = gltf.parser;
+
+      let variantsExtension;
+
+      if ("gltfExtensions" in gltf.userData) {
+        variantsExtension =
+          gltf.userData.gltfExtensions["KHR_materials_variants"];
+      }
+
+      if (variantsExtension != null) {
+        const variants = variantsExtension.variants.map(
+          (variant) => variant.name
+        );
+        const variantsCtrl = gui
+          .add(state, "variant", variants)
+          .name("Variant");
+
+        selectVariant(scene, parser, variantsExtension, state.variant);
+
+        variantsCtrl.onChange((value) =>
+          selectVariant(scene, parser, variantsExtension, value)
+        );
+      }
+
+      //const texture = new THREE.TextureLoader().load("waterdudv.jpg");
+      //  texture.wrapS = THREE.RepeatWrapping;
+      //   texture.wrapT = THREE.RepeatWrapping;
+      //    texture.repeat.set( 100, 100 );
+
+      //let material = new THREE.MeshBasicMaterial({map:texture});
+
+      //let mat = new THREE.MeshPhongMaterial({ map: texture });
+      render();
+    });
+  } //load model
+
 
 
 //-------------Render-------------
