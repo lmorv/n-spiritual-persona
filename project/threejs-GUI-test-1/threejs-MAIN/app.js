@@ -16,6 +16,8 @@ window.onload = function () {
   let gui3;
   let guiLeft;
   let controls;
+  let clock;
+  let canvas;
 
   const state = { variant: "Default" };
 
@@ -63,14 +65,17 @@ window.onload = function () {
 
 //-----------------Initialize-----------------
 function init() {
-	const canvas = document.querySelector("#c");
+
+  clock =  new THREE.Clock();
+
+  // canvas = document.querySelector("#c");
 
 //----------------Scene, Renderer-----------------
 scene = new THREE.Scene();                    //create a scene
 scene.background = new THREE.Color(0xaaaaaa);
 // scene.fog = new THREE.Fog(backgroundColor, 60, 100);
 
-renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer = new THREE.WebGLRenderer();
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
 // document.body.appendChild(renderer.domElement);
@@ -79,22 +84,32 @@ renderer.setPixelRatio(window.devicePixelRatio);
 camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); //create perspectivecamera Constructor(Field of view, aspect ratio, near plane, far plane) will define view frustum
 camera.position.z = 5;
 camera.position.x = 0;
-camera.position.y = 3;
+camera.position.y = 4;
+
 renderer = new THREE.WebGLRenderer();         //Does the math for you :) (some optional parameters)
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );   //domElement corresponds to the canvas
 
 
 //----------------------Orbit Controls------------------
-// controls = new OrbitControls(camera, renderer.domElement);
-// controls.enableDamping = true; // Add damping for smooth camera movement
+controls = new OrbitControls(camera, renderer.domElement);
+console.log(controls);
+controls.enableDamping = true; // Add damping for smooth camera movement
 // controls.dampingFactor = 0.05;
-// controls.rotateSpeed = 0.2; // Adjust the rotation speed
-// controls.zoomSpeed = 0.2; // Adjust the zoom speed
+controls.rotateSpeed = 0.5; // Adjust the rotation speed
+controls.zoomSpeed = 0.2; // Adjust the zoom speed
 
 //---------------------Helpers--------------------
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper(5);
+// scene.add(axesHelper);
+
+
+// Cube creation
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+cube.position.set(1, 2, -3);
+scene.add(cube);
 
 
 //----------------------Light-------------------
@@ -203,7 +218,7 @@ function loadGUI() {
     guiContainer.style.backgroundColor = 'rgba(173, 255, 230, 0.7)'; // Light teal with transparency
     // guiContainer.style.width = guiWidth + 'px'; 
     // guiContainer.style.height = guiHeight + 'px';
-    document.body.appendChild(guiContainer);
+    document.getElementById("overlay").appendChild(guiContainer);
 
 
     // declare GUI elements:
@@ -233,7 +248,7 @@ function loadGUI() {
     gui3.domElement.style.width = guiWidth + 'px';
     gui3.domElement.style.backgroundColor = GUIbgColor; 
 
-    document.body.appendChild(guiLeft.domElement); 
+    document.getElementById("overlay").appendChild(guiLeft.domElement); 
     guiLeft.domElement.style.position = 'absolute';
     guiLeft.domElement.style.left = '100px'; // Adjust the left position
     guiLeft.domElement.style.top = '20px'; // Adjust the top position
@@ -250,17 +265,22 @@ function loadGUI() {
   //-------------Update---------------
   function update() {
 
-    // controls.update();
+    let delta = clock.getDelta();    
+
+    controls.update();
 
     // in case resize window
     if (resizeRendererToDisplaySize(renderer)) {
       console.log("resize");
       const canvas = renderer.domElement;
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      console.log(canvas.clientWidth);
       camera.updateProjectionMatrix();
     }
+
     render();
     console.log("in update");
+    requestAnimationFrame(update);
   } //update
 
   //resize for window

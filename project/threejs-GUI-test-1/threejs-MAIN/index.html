@@ -6,11 +6,22 @@
 		<style>
 			body {
 				margin: 0;
-				display: flex;
+				display: block;
 				justify-content: center;
 			}
+			
+		
 
-			#info {
+			canvas {
+				position: absolute;
+				z-index: 10;
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+			}
+
+			#overlay {
 				position: absolute;
 				top: 10px;
 				/* width: 100%; */
@@ -30,6 +41,7 @@
 			</ul>
 		</div> -->
 
+		<div id = "overlay"> helloo woorld!!</div>
 		<!-- Either with npm or CDN Like done below -->
 		<!-- Version must be identified. Can check on npm for latest version -->
 		<script type="importmap">
@@ -46,6 +58,6 @@
 		</script>
 		<!-- Type module is important to get a reference from the imported CDN Library -->
 		<script type="module" src="app.js"></script>
-		<canvas id = "c"></canvas>
+		<!-- <canvas id = "c"></canvas> -->
 	</body>
 </html>
