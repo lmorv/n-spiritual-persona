@@ -93,12 +93,14 @@ document.body.appendChild( renderer.domElement );   //domElement corresponds to 
 
 //----------------------Orbit Controls------------------
 controls = new OrbitControls(camera, renderer.domElement);
-console.log(controls);
+//console.log(controls);
 controls.enableDamping = true; // Add damping for smooth camera movement
 // controls.dampingFactor = 0.05;
 controls.rotateSpeed = 0.5; // Adjust the rotation speed
 controls.zoomSpeed = 0.2; // Adjust the zoom speed
 controls.target.set(0,3,0); //Manually adjust the target of the camera at initial position
+controls.enablePan = false;
+controls.enableZoom = false;
 
 //---------------------Helpers--------------------
 const axesHelper = new THREE.AxesHelper(5);
@@ -127,7 +129,7 @@ scene.add(dirLight);   // Add directional Light to scene
 
 
 //--------------
-//setEnvironment();
+setEnvironment();
 loadModel();
 loadGUI();
 update();
@@ -136,16 +138,16 @@ update();
 
 //---------------------GEOMETRIES---------------------
   //to set up environment
-  // function setEnvironment() {
-  //   new RGBELoader()
-  //     .setDataType(THREE.HalfFloatType)
-  //     .setPath("3dassets")
-  //     .load("body.gltf", function (texture) {
-  //       texture.mapping = THREE.EquirectangularReflectionMapping;
+  function setEnvironment() {
+    new RGBELoader()
+    .setDataType(THREE.HalfFloatType)
+    .setPath("3dassets/")
+    .load("venice_sunset_1k.hdr", function (texture) {
+      texture.mapping = THREE.EquirectangularReflectionMapping;
 
-  //       scene.environment = texture;
-  //     });
-  // }
+        scene.environment = texture;
+      });
+  }
 
 //to load the model
 function loadModel() {
@@ -203,7 +205,6 @@ function loadGUI() {
     let GUIbgColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
 
     let containerOffset = (-window.innerWidth) + 200;
-    console.log(window.innerWidth);
 
     // Create a container div for gui1, gui2, and gui3
     let guiContainer = document.createElement('div');
@@ -214,7 +215,6 @@ function loadGUI() {
     // guiContainer.style.width = guiWidth + 'px'; 
     // guiContainer.style.height = guiHeight + 'px';
     document.getElementById("overlay").appendChild(guiContainer);
-
 
     // declare GUI elements:
      // Declare GUI elements and position them within the container
@@ -294,13 +294,4 @@ function loadGUI() {
     return needResize;
   } //resize
 
-// // //not rendered yet
-//  function animate() {
-//  	requestAnimationFrame( animate );            //wait for screen refresh, call animate again
-// //     cube.rotation.x += 0.01;                     //Rotation is a function inside mesh?
-// //     cube.rotation.y += 0.01;
-// //     horn.rotation.y += 0.01;
-//  	renderer.render( scene, camera );            //render!!!
-// }
-//  animate();
 }; //load
