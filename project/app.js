@@ -104,15 +104,6 @@ controls.target.set(0,3,0); //Manually adjust the target of the camera at initia
 const axesHelper = new THREE.AxesHelper(5);
 scene.add(axesHelper);
 
-
-// Cube creation
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-cube.position.set(1, 2, -3);
-scene.add(cube);
-
-
 //----------------------Light-------------------
 let ambientLight = new THREE.AmbientLight(0x101030, 1.0);
 scene.add(ambientLight);
@@ -207,14 +198,17 @@ function loadModel() {
   } //load model
 
 function loadGUI() {
-    let guiWidth = window.innerWidth * 0.2; // 10% of the screen width
-    let guiHeight = window.innerHeight * 0.2; // 10% of the screen height
+    let guiWidth = window.innerWidth * 0.2; // 20% of the screen width
+    let guiHeight = window.innerHeight * 0.2; // 20% of the screen height
     let GUIbgColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
+
+    let containerOffset = (-window.innerWidth) + 200;
+    console.log(window.innerWidth);
 
     // Create a container div for gui1, gui2, and gui3
     let guiContainer = document.createElement('div');
     guiContainer.style.position = 'absolute';
-    guiContainer.style.right = '20px'; // Adjust the right position
+    guiContainer.style.right = `${containerOffset}px`; // Adjust the right position
     guiContainer.style.top = '20px'; // Adjust the top position
     guiContainer.style.backgroundColor = 'rgba(173, 255, 230, 0.7)'; // Light teal with transparency
     // guiContainer.style.width = guiWidth + 'px'; 
