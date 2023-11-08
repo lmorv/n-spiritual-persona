@@ -1,16 +1,63 @@
 <!DOCTYPE html>
-<html>
-<head>
-<style>
-    body { margin: 0; }
-</style>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				margin: 0;
+				display: block;
+				justify-content: center;
+			}
+			
+		
 
-  <title>Three.js 3D Mesh Display</title>
-  <script type="module" src="/main.js"></script>
+			canvas {
+				position: absolute;
+				z-index: 10;
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+			}
 
-</head>
-<body>
-  <div id="container"></div>
-  <!-- <script type="module" src="mesh-loading.js"></script> -->
-</body>
+			#overlay {
+				position: absolute;
+				top: 10px;
+				/* width: 100%; */
+				padding: 1%;
+				/* text-align: center; */
+				z-index: 100;
+				display: block;
+				color: white;
+			}
+		</style>
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- <div id="info">
+			<ul>
+				<li>threejs.org</li>
+			</ul>
+		</div> -->
+
+		<div id = "overlay"> helloo woorld!!</div>
+		<!-- Either with npm or CDN Like done below -->
+		<!-- Version must be identified. Can check on npm for latest version -->
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://unpkg.com/three@v0.157.0/build/three.module.js",
+					"three/addons/GLTFLoader.js": "https://unpkg.com/three@0.157.0/examples/jsm/loaders/GLTFLoader.js",
+					"three/addons/OrbitControls.js": "https://unpkg.com/three@0.157.0/examples/jsm/controls/OrbitControls.js",
+					"three/addons/FirstPersonControls.js": "https://unpkg.com/three@0.157.0/examples/jsm/controls/FirstPersonControls.js",
+					"three/addons/RGBELoader.js":"https://unpkg.com/three@0.157.0/examples/jsm/loaders/RGBELoader.js",
+					"three/addons/libs/lil-gui.module.min.js":"https://unpkg.com/three@0.157.0/examples/jsm/libs/lil-gui.module.min.js"
+				}
+			}
+		</script>
+		<!-- Type module is important to get a reference from the imported CDN Library -->
+		<script type="module" src="app.js"></script>
+		<!-- <canvas id = "c"></canvas> -->
+	</body>
 </html>
