@@ -72,7 +72,7 @@ function init() {
 
 //----------------Scene, Renderer-----------------
 scene = new THREE.Scene();                    //create a scene
-scene.background = new THREE.Color(0xaaaaaa);
+scene.background = new THREE.Color("rgb(202, 198, 255)");
 // scene.fog = new THREE.Fog(backgroundColor, 60, 100);
 
 renderer = new THREE.WebGLRenderer();
