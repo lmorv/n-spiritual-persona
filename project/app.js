@@ -82,8 +82,8 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 //----------------------Camera------------------
 camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 ); //create perspectivecamera Constructor(Field of view, aspect ratio, near plane, far plane) will define view frustum
-camera.position.z = 5;
-camera.position.x = 0;
+camera.position.z = 3;
+camera.position.x = 1;
 camera.position.y = 4;
 
 renderer = new THREE.WebGLRenderer();         //Does the math for you :) (some optional parameters)
@@ -98,10 +98,11 @@ controls.enableDamping = true; // Add damping for smooth camera movement
 // controls.dampingFactor = 0.05;
 controls.rotateSpeed = 0.5; // Adjust the rotation speed
 controls.zoomSpeed = 0.2; // Adjust the zoom speed
+controls.target.set(0,3,0); //Manually adjust the target of the camera at initial position
 
 //---------------------Helpers--------------------
-// const axesHelper = new THREE.AxesHelper(5);
-// scene.add(axesHelper);
+const axesHelper = new THREE.AxesHelper(5);
+scene.add(axesHelper);
 
 
 // Cube creation
@@ -144,16 +145,16 @@ update();
 
 //---------------------GEOMETRIES---------------------
   //to set up environment
-  function setEnvironment() {
-    new RGBELoader()
-      .setDataType(THREE.HalfFloatType)
-      .setPath("3dassets")
-      .load("body.gltf", function (texture) {
-        texture.mapping = THREE.EquirectangularReflectionMapping;
+  // function setEnvironment() {
+  //   new RGBELoader()
+  //     .setDataType(THREE.HalfFloatType)
+  //     .setPath("3dassets")
+  //     .load("body.gltf", function (texture) {
+  //       texture.mapping = THREE.EquirectangularReflectionMapping;
 
-        scene.environment = texture;
-      });
-  }
+  //       scene.environment = texture;
+  //     });
+  // }
 
 //to load the model
 function loadModel() {
