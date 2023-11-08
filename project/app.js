@@ -211,18 +211,18 @@ function loadGUI() {
     guiContainer.style.position = 'absolute';
     guiContainer.style.right = `${containerOffset}px`; // Adjust the right position
     guiContainer.style.top = '20px'; // Adjust the top position
-    guiContainer.style.backgroundColor = 'rgba(173, 255, 230, 0.7)'; // Light teal with transparency
+    guiContainer.style.backgroundColor = 'rgba(173, 255, 230, 0.3)';
     // guiContainer.style.width = guiWidth + 'px'; 
     // guiContainer.style.height = guiHeight + 'px';
     document.getElementById("overlay").appendChild(guiContainer);
 
     // declare GUI elements:
      // Declare GUI elements and position them within the container
-     gui1 = new GUI();
+     gui1 = new GUI({autoPlace: false});
      gui1.domElement.style.position = 'relative'; // Position gui1 relative to the container
-     gui2 = new GUI();
+     gui2 = new GUI({autoPlace: false});
      gui2.domElement.style.position = 'relative'; // Position gui2 relative to the container
-     gui3 = new GUI();
+     gui3 = new GUI({autoPlace: false});
      gui3.domElement.style.position = 'relative'; // Position gui3 relative to the container
      guiContainer.appendChild(gui1.domElement);
      guiContainer.appendChild(gui2.domElement);
