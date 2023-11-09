@@ -1,19 +1,19 @@
 {
   "main": {
-    "id": "5d1473f1687425b7",
+    "id": "195e88fe667cdb4c",
     "type": "split",
     "children": [
       {
-        "id": "6f5c3f10a469294d",
+        "id": "179b493527e1954e",
         "type": "tabs",
         "children": [
           {
-            "id": "0f48ce7effc9e1f8",
+            "id": "37b352b1521b73f5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "leo-why.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "79f3b43d2b08d776",
+    "id": "0c2dd2cd525022d8",
     "type": "split",
     "children": [
       {
-        "id": "7946821108bd54f0",
+        "id": "6e6adf5b91029add",
         "type": "tabs",
         "children": [
           {
-            "id": "d3cd16a4fb00a124",
+            "id": "da59cf9939427de5",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +43,7 @@
             }
           },
           {
-            "id": "d1de48fceda402b4",
+            "id": "06fcd3b5b20e8f79",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +58,7 @@
             }
           },
           {
-            "id": "025f451e78d099c7",
+            "id": "ee605e484b5c6391",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,24 +69,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.5,
-    "collapsed": true
+    "width": 300
   },
   "right": {
-    "id": "9f5b49d33c977b5e",
+    "id": "6dfa0622fe58b50f",
     "type": "split",
     "children": [
       {
-        "id": "a0057cb7f447e1f4",
+        "id": "bd9cbb6acd490a67",
         "type": "tabs",
         "children": [
           {
-            "id": "c81de3728f0e7292",
+            "id": "db0d1b47b62e52c4",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "leo-why.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,19 +97,19 @@
             }
           },
           {
-            "id": "a64dc49d014d4653",
+            "id": "bdbce5ee2d3d5201",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "leo-why.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "f1e911566517906c",
+            "id": "f9417c356c32f7b1",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -121,12 +120,12 @@
             }
           },
           {
-            "id": "456979060a947aac",
+            "id": "19f0fd0f78dd6298",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "leo-why.md"
               }
             }
           }
@@ -147,22 +146,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0f48ce7effc9e1f8",
+  "active": "37b352b1521b73f5",
   "lastOpenFiles": [
-    "process/noemie-journal.md",
-    "process/noemie-journal",
-    "README.md",
-    "art-source/nsp_storyboard-6.png",
-    "art-source/nsp_storyboard-3.png",
-    "art-source/nsp_storyboard-2.png",
-    "art-source/nsp_storyboard-1.png",
-    "art-source/nsp_storyboard-5.png",
-    "process/images/moodboard-1.png",
-    "process/images/ideation-1.png",
-    "process/leo-why.md",
-    "process/leo-todo.md",
-    "process/leo-journal.md",
-    "Untitled.md",
-    "process/images"
+    "leo-todo.md",
+    "leo-journal.md",
+    "noemie-journal.md"
   ]
 }

@@ -1,19 +1,19 @@
 {
   "main": {
-    "id": "5d1473f1687425b7",
+    "id": "e2afab67808335ab",
     "type": "split",
     "children": [
       {
-        "id": "6f5c3f10a469294d",
+        "id": "3873b28d5d02186c",
         "type": "tabs",
         "children": [
           {
-            "id": "0f48ce7effc9e1f8",
+            "id": "b22e56a268eb8bb0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "n-spiritual Persona.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,15 +25,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "79f3b43d2b08d776",
+    "id": "970e0def7aa816fa",
     "type": "split",
     "children": [
       {
-        "id": "7946821108bd54f0",
+        "id": "119e1b4326fcc545",
         "type": "tabs",
         "children": [
           {
-            "id": "d3cd16a4fb00a124",
+            "id": "9943948e75dfba53",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +43,7 @@
             }
           },
           {
-            "id": "d1de48fceda402b4",
+            "id": "e4d08b1b450ab174",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +58,7 @@
             }
           },
           {
-            "id": "025f451e78d099c7",
+            "id": "43164403d1458a38",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,24 +69,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.5,
+    "width": 200,
     "collapsed": true
   },
   "right": {
-    "id": "9f5b49d33c977b5e",
+    "id": "550a6a670856c26b",
     "type": "split",
     "children": [
       {
-        "id": "a0057cb7f447e1f4",
+        "id": "ee3d4e8489ab89b9",
         "type": "tabs",
         "children": [
           {
-            "id": "c81de3728f0e7292",
+            "id": "bcc05d3020795983",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "n-spiritual Persona.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,19 +98,19 @@
             }
           },
           {
-            "id": "a64dc49d014d4653",
+            "id": "d1c4e4552b5f6f99",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "n-spiritual Persona.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "f1e911566517906c",
+            "id": "5d8fe3daeb33fedc",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -121,12 +121,12 @@
             }
           },
           {
-            "id": "456979060a947aac",
+            "id": "f1fc12d48a207004",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "n-spiritual Persona.md"
               }
             }
           }
@@ -147,22 +147,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0f48ce7effc9e1f8",
+  "active": "b22e56a268eb8bb0",
   "lastOpenFiles": [
-    "process/noemie-journal.md",
-    "process/noemie-journal",
-    "README.md",
-    "art-source/nsp_storyboard-6.png",
-    "art-source/nsp_storyboard-3.png",
-    "art-source/nsp_storyboard-2.png",
-    "art-source/nsp_storyboard-1.png",
-    "art-source/nsp_storyboard-5.png",
-    "process/images/moodboard-1.png",
-    "process/images/ideation-1.png",
-    "process/leo-why.md",
-    "process/leo-todo.md",
-    "process/leo-journal.md",
-    "Untitled.md",
-    "process/images"
+    "ComponentsDiagram.png",
+    "Pasted image 20231109103538.png"
   ]
 }
