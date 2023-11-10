@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "project/n-spiritual Persona.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.5,
-    "collapsed": true
+    "width": 225.5
   },
   "right": {
     "id": "9f5b49d33c977b5e",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "project/n-spiritual Persona.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "project/n-spiritual Persona.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "project/n-spiritual Persona.md"
               }
             }
           }
@@ -149,9 +148,11 @@
   },
   "active": "0f48ce7effc9e1f8",
   "lastOpenFiles": [
+    "project/ComponentsDiagram.png",
+    "project/n-spiritual Persona.md",
+    "README.md",
     "process/noemie-journal.md",
     "process/noemie-journal",
-    "README.md",
     "art-source/nsp_storyboard-6.png",
     "art-source/nsp_storyboard-3.png",
     "art-source/nsp_storyboard-2.png",
