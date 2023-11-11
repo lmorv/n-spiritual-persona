@@ -30,11 +30,16 @@ What's left to do for the final:
 	The body separated in different elements like arms, legs, head, ears, and torso.
 - **Customization elements (like the radar chart)**
 	Will allow the user to modify the position, size and color of the elements
-- User input
-- Personality test
-- Personal/public gallery
-- Download a model
-- Import a model
+- **User input**
+	What the user will answer/input
+- **Personality test**
+	It will be abstract and not related to gender, but will still impact the initial setup or inspiration for the character.
+- **Personal/public gallery**
+	The user will be able to share their creation with other user, or compare the different results they got.
+- **Download a model**
+	To be able to use their character as a 3D avatar in other online contexts or for the impression of a physical version.
+- **Import a model**
+	To be able to add their own design to the platform, to contribute to it with their own creativity. Blender or another software might allow more possibilities.
 
 ## User Testing & Feedback
 ------------------
@@ -51,16 +56,4 @@ Stemming from the use-after-creation thread of conversation, the question of pri
 
 **Jennifer Brown:**
 "Very nice concept and design! I think the focus on non-binary character creation is a really smart idea - I think its very narrative relevant and the direction I personally hope more character creators move towards, but it also saves you the work of distinguishing features by gender or risking accidental stereotyping. I think the overall concept of generating a character based on a quiz is super appealing as well - I could see this catching the attention of a lot of people. Regarding the 3D models and materials, I would think more about the desired end result after generating this character - is it being posted to social media? Downloaded to Blender? 3D printable? This might make your priorities (form v. texture) a bit clearer. Good luck! I want to play this!!""
-## Reexamination
--------
-
-Ideas to redirect/define the project idea
-
-Implementing images and sketches as inspiration
-Importing a template for blender and maybe instructions
-Exporting towards an online library but also as a product, as a print OR as a 3d printed figurine.
-(if we are focusing on 3d printed figurine, we can focus more on shapes than on textures and colors)
-Focus on bodies plurality more than on fashion and clothing
-No hair
-Open source? only images? share shapes?
 
