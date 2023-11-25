@@ -22,3 +22,9 @@ FAVNUM:2
 ANIMAL:turple
 COLOR:purtle
 FAVNUM:42
+ANIMAL:fuun
+COLOR:fuun fuun
+FAVNUM:7
+ANIMAL:mnbnbm
+COLOR:hgjhgjhgjh
+FAVNUM:77

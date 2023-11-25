@@ -28,9 +28,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
   }
 }
   
- 
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

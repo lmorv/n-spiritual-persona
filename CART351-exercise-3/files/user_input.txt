@@ -1,0 +1,4 @@
+{"response":"success","artist":"gool","title":"goul","location":"ghoul","description":"soul","creation_Date":"2023-11-30","fileName":"Screenshot (1190).png"}
+{"response":"success","artist":"fuuun","title":"fuun","location":"fuuuuuun","description":"fuuuun","creation_Date":"2023-11-29","fileName":"Screenshot (1207).png"}
+{"artist":"lool","title":"lol","location":"lol","description":"lol","creation_Date":"2023-11-22","fileName":null}
+{"artist":"lool","title":"lol","location":"lol","description":"lool","creation_Date":"2023-11-25","fileName":null}
