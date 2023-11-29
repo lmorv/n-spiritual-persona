@@ -61,3 +61,5 @@ img{margin:2%;width:96%;}
     background: #04AA6D;
     cursor: pointer;
   }
+
+  #result { display: flex; }
