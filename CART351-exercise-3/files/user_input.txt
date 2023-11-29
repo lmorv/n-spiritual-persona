@@ -1,12 +1,7 @@
 {"response":"success","artist":"gool","title":"goul","location":"ghoul","description":"soul","creation_Date":"2023-11-30","fileName":"Screenshot (1190).png"}
 {"response":"success","artist":"fuuun","title":"fuun","location":"fuuuuuun","description":"fuuuun","creation_Date":"2023-11-29","fileName":"Screenshot (1207).png"}
 {"artist":"lool","title":"lol","location":"lol","description":"lol","creation_Date":"2023-11-22","fileName":null}
-{"artist":"dvgz","title":null,"location":null,"description":null,"creation_Date":null,"fileName":null}
-{"artist":"zgn"}
-{"artist":"dvgz"}
-{"artist":"dvgz"}
-{"artist":"dvgz"}
-{"artist":"dvgz"}
-{"artist":"dfg"}
-{"artist":"zgn"}
-{"artist":"dvgz"}
+{"artist":"dvgz","aterms":null,"amist":null,"acolor":"#ff0000","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"hey"}
+{"artist":"dvgz","aterms":"yes","amist":"calming","acolor":"#5e3b3b","arainbow":"end","aghost":"50","aclouds":"bubbly","aboom":"50","aplant":"hey"}{"artist":"dvgz","aterms":"yes","amist":"calming","acolor":"#ff0000","arainbow":"end","aghost":"50","aclouds":"bubbly","aboom":"50","aplant":"adrg"}
+{"artist":"dvgz","aterms":"yes","amist":"scarry","acolor":"#ff0000","arainbow":"end","aghost":"29","aclouds":"bubbly","aboom":"50","aplant":"RSG"}
+{"artist":"dvgz","aterms":"yes","amist":"calming","acolor":"#ff0000","arainbow":"end","aghost":"50","aclouds":"bubbly","aboom":"50","aplant":"DFGh"}

@@ -11,24 +11,29 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 // need to process
  $artist = $_POST['a_name'];
-//  $title = $_POST['a_title'];
-//  $loc = $_POST['a_geo_loc'];
-//  $description = $_POST['a_descript'];
-//  $creationDate = $_POST['a_date'];
+ $terms = $_POST['terms'];
+ $mist = $_POST['mist'];
+ $color = $_POST['color'];
+ $rainbow = $_POST['rainbow'];
+ $ghost = $_POST['ghost'];
+ $clouds = $_POST['clouds'];
+ $boom = $_POST['boom'];
+ $plant = $_POST['plant'];
+
 
  //package the data and echo back...
     /* make  a new generic php object */
     $myPackagedData=new stdClass();
     // $myPackagedData->response = "success";
     $myPackagedData->artist = $artist ;
-    $myPackagedData->terms = $terms ;
-    $myPackagedData->mist = $mist ;
-    $myPackagedData->color = $color ;
-    $myPackagedData->rainbow = $rainbow ;
-    $myPackagedData->ghost = $ghost ;
-    $myPackagedData->clouds = $clouds ;
-    $myPackagedData->boom = $boom ;
-    $myPackagedData->plant = $plant ;
+    $myPackagedData->aterms = $terms ;
+    $myPackagedData->amist = $mist ;
+    $myPackagedData->acolor = $color ;
+    $myPackagedData->arainbow = $rainbow ;
+    $myPackagedData->aghost = $ghost ;
+    $myPackagedData->aclouds = $clouds ;
+    $myPackagedData->aboom = $boom ;
+    $myPackagedData->aplant = $plant ;
      /* Now we want to JSON encode these values as a JSON string ..
      to send them to $.ajax success  call back function... */
     $myJSONObj = json_encode($myPackagedData);
@@ -84,8 +89,10 @@ function readFromFile() {
 <!--form done using more current tags... -->
 <form id="insertGallery" action="" enctype ="multipart/form-data">
 <!-- group the related elements in a form -->
-<h3> SUBMIT AN ART WORK :::</h3>
+<h3> Take the test!</h3>
+
 <fieldset>
+  <p>This is a quick personality test to know what type of virtual persona you are today!</p>
 <p><label>Username:</label><input type="text" size="24" maxlength = "40" name = "a_name" required></p>
 <fieldset>
     <legend>Do you agree to the terms?</legend>
@@ -198,6 +205,7 @@ function readFromFile() {
         });
 
     function displayResponse(theResult){
+      document.querySelector("#result").innerHTML="";
       let container = document.createElement("div");
       container.classList.add("outer");
       document.querySelector("#result").appendChild(container);
