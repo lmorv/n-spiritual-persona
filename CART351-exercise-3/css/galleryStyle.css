@@ -65,4 +65,4 @@ img{margin:2%;width:96%;}
     cursor: pointer;
   }
 
-  #result { display: flex; }
+  #result { display: flex; flex-wrap: wrap;}
