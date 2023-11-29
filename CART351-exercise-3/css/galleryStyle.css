@@ -64,3 +64,5 @@ img{margin:2%;width:96%;}
     background:var(--sup);
     cursor: pointer;
   }
+
+  #result { display: flex; }
