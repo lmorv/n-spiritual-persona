@@ -18,3 +18,10 @@ h3{padding:5px;text-align: center; width:50%;font-family:arial;color:#555;margin
 .content{background-color:#006bb3;width:100%;}
 .content p{color:white;padding:2%;background:#004d80;font-family:arial;}
 img{margin:2%;width:96%;}
+
+.slider {
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+
+  }
