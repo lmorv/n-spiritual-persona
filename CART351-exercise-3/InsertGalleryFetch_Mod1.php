@@ -21,11 +21,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $myPackagedData=new stdClass();
     // $myPackagedData->response = "success";
     $myPackagedData->artist = $artist ;
-    // $myPackagedData->title = $title ;
-    // $myPackagedData->location = $loc ;
-    // $myPackagedData->description = $description ;
-    // $myPackagedData->creation_Date = $creationDate ;
-    // $myPackagedData->fileName = $fname ;
+    $myPackagedData->terms = $terms ;
+    $myPackagedData->mist = $mist ;
+    $myPackagedData->color = $color ;
+    $myPackagedData->rainbow = $rainbow ;
+    $myPackagedData->ghost = $ghost ;
+    $myPackagedData->clouds = $clouds ;
+    $myPackagedData->boom = $boom ;
+    $myPackagedData->plant = $plant ;
      /* Now we want to JSON encode these values as a JSON string ..
      to send them to $.ajax success  call back function... */
     $myJSONObj = json_encode($myPackagedData);
@@ -53,18 +56,6 @@ function readFromFile() {
      while(!feof($theFile)) {
        //create an object to send back
 
-      //  $packObj=new stdClass();
-
-      //  for($j=0;$j<$NUM_PROPS;$j++){
-      //    $str = fgets($theFile);
-      //    //split and return an array ...
-      //    $splitArr = explode(":",$str);
-      //    $key = $splitArr[0];
-      //    $val = $splitArr[1];
-      //    //append the key value pair
-      //    $packObj->$key = trim($val);
-      //  }
-      //  $outArr[]=$packObj;
 
       $str = fgets($theFile);
       $outArr[] = json_decode($str);
@@ -95,12 +86,6 @@ function readFromFile() {
 <!-- group the related elements in a form -->
 <h3> SUBMIT AN ART WORK :::</h3>
 <fieldset>
-<!-- <p><label>Artist:</label><input type="text" size="24" maxlength = "40" name = "a_name" required></p>
-<p><label>Title:</label><input type = "text" size="24" maxlength = "40"  name = "a_title" required></p>
-<p><label>Geographic Location:</label><input type = "text" size="24" maxlength = "40" name = "a_geo_loc" required></p>
-<p><label>Creation Date (DD-MM-YYYY):</label><input type="date" name="a_date" required></p>
-<p><label>Description:</label><textarea type = "text" rows="4" cols="50" name = "a_descript" required></textarea></p> -->
-<!-- <p><label>Upload Image:</label> <input type ="file" name = 'filename' size=10 required/></p> -->
 <p><label>Username:</label><input type="text" size="24" maxlength = "40" name = "a_name" required></p>
 <fieldset>
     <legend>Do you agree to the terms?</legend>
@@ -135,6 +120,10 @@ function readFromFile() {
     <legend>Do you look back at explosions?</legend>
     <input type="range" min="1" max="100" value="50" class="slider" name="boom">
 </fieldset>
+<fieldset>
+<legend>What type of plant are you today?</legend><input type = "text" size="24" maxlength = "40"  name = "plant" required>
+</fieldset>
+
 
 
 
