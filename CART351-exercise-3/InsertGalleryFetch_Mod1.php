@@ -107,7 +107,7 @@ function readFromFile() {
   </fieldset>
   <fieldset>
     <legend>What color would best describe your day so far?</legend>
-    <input type="color" name="color" id="favcolor" value="#ff0000">
+    <input type="color" name="color" id="favcolor" value="#ff0020">
 </fieldset>
   <fieldset>
     <legend>What do you belive is at the end of a rainbow?</legend>
