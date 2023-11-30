@@ -237,5 +237,6 @@ function readFromFile() {
 
     }// window onLoad
 </script>
+<a href="noemie_leo_Exercise_3.zip">Download the files for the exercise 3</a>
 </body>
 </html>
