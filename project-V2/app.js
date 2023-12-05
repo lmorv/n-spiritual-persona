@@ -12,6 +12,13 @@ window.onload = function () {
 	let renderer;
 	let model;
 
+  // let scale = [
+  //     [0.9,0.9,0.9],
+  //     [0.9,0.9,0.9],
+  //     [0.9,0.9,0.9],
+  //     [0.9,0.9,0.9],
+  //     [0.9,0.9,0.9],
+  //   ];
   let vartorso = 0;
   let torso=[];
   let vararms = 0;
@@ -29,7 +36,7 @@ window.onload = function () {
   let clock;
   let canvas;
 
-  let scale = 0.9;
+  
 
   const state = { variant: "Default" };
 
@@ -242,16 +249,7 @@ update();
     return {head1,torso1,torso2,torso3,arms1,arms2,arms3,hips1,hips2,hips3,legs1,legs2};
     }
     
-async function modifTorso(){
-  console.log("MODIFICATION!");
-  scene.remove(torso[vartorso]);
-  vartorso++;
-if (vartorso >= 3){vartorso=0}
-console.log(vartorso);
-  scene.add(torso[vartorso]);//here I choose what is added
-  
-  render();
-}
+
 
 //to load the texture variants
   // function loadVariants() {
@@ -302,6 +300,35 @@ console.log(vartorso);
       //let mat = new THREE.MeshPhongMaterial({ map: texture });
        //render();
    //} //load variants
+   
+   async function modifTorso(){
+  scene.remove(torso[vartorso]);
+  vartorso++;
+if (vartorso >= 3){vartorso=0}
+  scene.add(torso[vartorso]);//here I choose what is added
+  render();
+}
+async function modifArms(){
+  scene.remove(arms[vararms]);
+  vararms++;
+if (vararms >= 3){vararms=0}
+  scene.add(arms[vararms]);//here I choose what is added
+  render();
+}
+async function modifHips(){
+  scene.remove(hips[varhips]);
+  varhips++;
+if (varhips >= 3){varhips=0}
+  scene.add(hips[varhips]);//here I choose what is added
+  render();
+}
+async function modifLegs(){
+  scene.remove(hips[varlegs]);
+  varlegs++;
+if (varlegs >= 2){varlegs=0}
+  scene.add(legs[varlegs]);//here I choose what is added
+  render();
+}
 
 // //------------style sheet reference----------------
 
@@ -325,27 +352,34 @@ function loadGUI() {
     myString: 'lil-gui',
     myNumber: 1,
     HappyButton: function() { modifTorso(); },
-    number: scale,
+    HappyButton2: function() { modifArms(); },
+    HappyButton3: function() { modifHips(); },
+    HappyButton4: function() { modifLegs(); },
+    number: 3,
     x: 1,
     y: 1,
     z: 1
 }
   
-  // gui.add( params, 'myBoolean' ).onChange(value =>{});  // Checkbox
-  gui.add( params, 'HappyButton' ); // Button
+  gui.add( params, 'myBoolean' ).onChange(value =>{});  // Checkbox
   gui.add( params, 'myString' );   // Text Field
   gui.add( params, 'myNumber' );   // Number Field
   gui.add( params, 'number', 0.8, 1 ).onChange( value => {
-    scale = value;
-    torso[vartorso].scale.set(scale, scale, scale);
+    //scale[1] = value;
+    //torso[vartorso].scale.set(scale, scale, scale);
   } );
 
 // nested controllers
-const folder = gui.addFolder( 'Position' );
-folder.add( params, 'x' );
-folder.add( params, 'y' );
-folder.add( params, 'z' );
+const folder1 = gui.addFolder( 'Head' );
+folder1.close();
+folder1.add( params, 'x', 0.8, 1  ).onChange( value => {
+  //scale[0] = value;
+  //head[varhead].scale.set(scale, scale, scale);
+} );
+folder1.add( params, 'y' );
+folder1.add( params, 'z' );
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
     let guiWidth = window.innerWidth * 0.2; // 20% of the screen width
@@ -402,6 +436,29 @@ folder.add( params, 'z' );
     guiLeft.domElement.style.width = guiWidth + 'px'; 
     guiLeft.domElement.style.height = guiHeight + 'px';
     guiLeft.domElement.style.backgroundColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
+>>>>>>> Stashed changes
+=======
+const folder2 = gui.addFolder( 'Torso' );
+folder2.close();
+folder2.add( params, 'HappyButton' ); // Button
+folder2.add( params, 'x', 0.8, 1 ).onChange( value => {
+  //scaleT = value;
+  //torso[vartorso].scale.set(scaleT,scaleT,scaleT );
+} );
+folder2.add( params, 'y' );
+folder2.add( params, 'z' );
+
+const folder3 = gui.addFolder( 'Arms' );
+folder3.close();
+folder3.add( params, 'HappyButton2' ); // Button
+
+const folder4 = gui.addFolder( 'Hips' );
+folder4.close();
+folder4.add( params, 'HappyButton3' ); // Button
+
+const folder5 = gui.addFolder( 'Legs' );
+folder5.close();
+folder5.add( params, 'HappyButton4' ); // Button
 >>>>>>> Stashed changes
 }
 
