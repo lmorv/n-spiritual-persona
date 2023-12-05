@@ -19,6 +19,8 @@ window.onload = function () {
       [1,1,1],
       [1,1,1],
     ];
+    let varhead=0;
+    let head =[];
   let vartorso = 0;
   let torso=[];
   let vararms = 0;
@@ -101,7 +103,7 @@ camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight
 camera.position.z = 1;
 camera.position.x = 3;
 camera.position.y = 4;
-camera.zoom = 1;
+camera.zoom = 0.9;
 
 renderer = new THREE.WebGLRenderer();         //Does the math for you :) (some optional parameters)
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -120,8 +122,8 @@ controls.enablePan = false;
 controls.enableZoom = false;
 
 //---------------------Helpers--------------------
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
+//const axesHelper = new THREE.AxesHelper(5);
+//scene.add(axesHelper);
 
 //----------------------Light-------------------
 let ambientLight = new THREE.AmbientLight(0x101030, 1.0);
@@ -148,6 +150,7 @@ scene.add(dirLight);   // Add directional Light to scene
 //--------------
 setEnvironment();
 const {head1,torso1,torso2,torso3,arms1,arms2,arms3,hips1,hips2,hips3,legs1,legs2 } = await loadModels();
+head.push(head1);
 torso.push(torso1,torso2,torso3);
 arms.push(arms1,arms2,arms3);
 hips.push(hips1,hips2,hips3);
@@ -221,86 +224,11 @@ update();
     const legs1 = legsData1.scene;
     const legs2 = legsData2.scene;
     
-
-// //------------Texture Variant----------------
-// const parser = torsoData.parser;
-// let variantsExtension;
-
-// if ("gltfExtensions" in torsoData.userData) {
-//   variantsExtension =
-//     torsoData.userData.gltfExtensions["KHR_materials_variants"];
-// }
-
-// if (variantsExtension != null) {
-//   const variants = variantsExtension.variants.map(
-//     (variant) => variant.name
-//   );
-//   const variantsCtrl = gui1
-//     .add(state, "variant", variants)
-//     .name("Variant");
-
-//   selectVariant(scene, parser, variantsExtension, state.variant);
-
-//   variantsCtrl.onChange((value) =>
-//     selectVariant(scene, parser, variantsExtension, value)
-//   );
-// }
-    
     //Tell the await function when we are done here! :)
     return {head1,torso1,torso2,torso3,arms1,arms2,arms3,hips1,hips2,hips3,legs1,legs2};
     }
     
 
-
-//to load the texture variants
-  // function loadVariants() {
-  //   let loader = new GLTFLoader();
-
-  //   loader.load(MODEL_PATH, function (gltf) {
-  //     // GUI
-  //     gui = new GUI();
-
-  //     model = gltf.scene;
-  //     model.scale.set(1, 1, 1);
-
-  //     model.position.set(0,0, 0);
-  //     scene.add(model);
-       // Details of the KHR_materials_variants extension used here can be found below
-       // https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants
-      // const parser = gltf.parser;
-
-      // let variantsExtension;
-
-      // if ("gltfExtensions" in gltf.userData) {
-      //   variantsExtension =
-      //     gltf.userData.gltfExtensions["KHR_materials_variants"];
-      // }
-
-      // if (variantsExtension != null) {
-      //   const variants = variantsExtension.variants.map(
-      //     (variant) => variant.name
-      //   );
-      //   const variantsCtrl = gui1
-      //     .add(state, "variant", variants)
-      //     .name("Variant");
-
-      //   selectVariant(scene, parser, variantsExtension, state.variant);
-
-      //   variantsCtrl.onChange((value) =>
-      //     selectVariant(scene, parser, variantsExtension, value)
-      //   );
-      // }
-
-      //const texture = new THREE.TextureLoader().load("waterdudv.jpg");
-      //  texture.wrapS = THREE.RepeatWrapping;
-      //   texture.wrapT = THREE.RepeatWrapping;
-      //    texture.repeat.set( 100, 100 );
-
-      //let material = new THREE.MeshBasicMaterial({map:texture});
-
-      //let mat = new THREE.MeshPhongMaterial({ map: texture });
-       //render();
-   //} //load variants
    
    async function modifTorso(){
   scene.remove(torso[vartorso]);
@@ -362,39 +290,45 @@ function loadGUI() {
   //-----GUI------
   let params = {
     myBoolean: true,
-    myString: 'lil-gui',
+    Persona: 'NAME ME',
     myNumber: 1,
-    HappyButton: function() { modifTorso(); },
-    HappyButton2: function() { modifArms(); },
-    HappyButton3: function() { modifHips(); },
-    HappyButton4: function() { modifLegs(); },
+    Transmorgify: function() { modifTorso(); },
+    Switch_a_roo: function() { modifArms(); },
+    Happy_Button: function() { modifHips(); },
+    Mophius: function() { modifLegs(); },
     number: 3,
     x: 1,
     y: 1,
     z: 1
 }
   
-  gui.add( params, 'myBoolean' ).onChange(value =>{});  // Checkbox
-  gui.add( params, 'myString' );   // Text Field
-  gui.add( params, 'myNumber' );   // Number Field
-  gui.add( params, 'number', 0.8, 1 ).onChange( value => {
+  //gui.add( params, 'myBoolean' ).onChange(value =>{});  // Checkbox
+  gui.add( params, 'Persona' );   // Text Field
+  //gui.add( params, 'myNumber' );   // Number Field
+  //gui.add( params, 'number', 0.8, 1 ).onChange( value => {
     //scale[1] = value;
     //torso[vartorso].scale.set(scale, scale, scale);
-  } );
+  //} );
 
 // nested controllers
 const folder1 = gui.addFolder( 'Head' );
 folder1.close();
 folder1.add( params, 'x', 0.5, 2 ).onChange( value => {
-  //scale[0] = value;
-  //head[varhead].scale.set(scale, scale, scale);
+  scale[0][0] = value;
+  head[varhead].scale.set(scale[0][0],scale[0][1],scale[0][2] );
 } );
-folder1.add( params, 'y' );
-folder1.add( params, 'z' );
+folder1.add( params, 'y', 0.5, 2 ).onChange( value => {
+  scale[0][2] = value;
+  head[varhead].scale.set(scale[0][0],scale[0][1],scale[0][2] );
+} );
+folder1.add( params, 'z', 0.8, 1.2 ).onChange( value => {
+  scale[0][1] = value;
+  head[varhead].scale.set(scale[0][0],scale[0][1],scale[0][2] );
+} );
 
 const folder2 = gui.addFolder( 'Torso' );
 folder2.close();
-folder2.add( params, 'HappyButton' ); // Button
+folder2.add( params, 'Transmorgify' ); // Button
 folder2.add( params, 'x', 0.5, 2 ).onChange( value => {
   scale[1][0] = value;
   torso[vartorso].scale.set(scale[1][0],scale[1][1],scale[1][2] );
@@ -410,15 +344,51 @@ folder2.add( params, 'z', 0.8, 1.2 ).onChange( value => {
 
 const folder3 = gui.addFolder( 'Arms' );
 folder3.close();
-folder3.add( params, 'HappyButton2' ); // Button
+folder3.add( params, 'Switch_a_roo' ); // Button
+folder3.add( params, 'x', 0.5, 2 ).onChange( value => {
+  scale[2][0] = value;
+  arms[vararms].scale.set(scale[2][0],scale[2][1],scale[2][2] );
+} );
+folder3.add( params, 'y', 0.5, 2 ).onChange( value => {
+  scale[2][2] = value;
+  arms[vararms].scale.set(scale[2][0],scale[2][1],scale[2][2] );
+} );
+folder3.add( params, 'z', 0.8, 1.2 ).onChange( value => {
+  scale[2][1] = value;
+  arms[vararms].scale.set(scale[2][0],scale[2][1],scale[2][2] );
+} );
 
 const folder4 = gui.addFolder( 'Hips' );
 folder4.close();
-folder4.add( params, 'HappyButton3' ); // Button
+folder4.add( params, 'Happy_Button' ); // Button
+folder4.add( params, 'x', 0.5, 2 ).onChange( value => {
+  scale[3][0] = value;
+  hips[varhips].scale.set(scale[3][0],scale[3][1],scale[3][2] );
+} );
+folder4.add( params, 'y', 0.5, 2 ).onChange( value => {
+  scale[3][2] = value;
+  hips[varhips].scale.set(scale[3][0],scale[3][1],scale[3][2] );
+} );
+folder4.add( params, 'z', 0.8, 1.2 ).onChange( value => {
+  scale[3][1] = value;
+  hips[varhips].scale.set(scale[3][0],scale[3][1],scale[3][2] );
+} );
 
 const folder5 = gui.addFolder( 'Legs' );
 folder5.close();
-folder5.add( params, 'HappyButton4' ); // Button
+//folder5.add( params, 'Mophius' ); // Button
+folder5.add( params, 'x', 0.5, 2 ).onChange( value => {
+  scale[4][0] = value;
+  legs[varlegs].scale.set(scale[4][0],scale[4][1],scale[4][2] );
+} );
+folder5.add( params, 'y', 0.5, 2 ).onChange( value => {
+  scale[4][2] = value;
+  legs[varlegs].scale.set(scale[4][0],scale[4][1],scale[4][2] );
+} );
+folder5.add( params, 'z', 0.8, 2 ).onChange( value => {
+  scale[4][1] = value;
+  legs[varlegs].scale.set(scale[4][0],scale[4][1],scale[4][2] );
+} );
 
 createSpiderChart();
 }
