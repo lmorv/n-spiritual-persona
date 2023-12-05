@@ -12,13 +12,13 @@ window.onload = function () {
 	let renderer;
 	let model;
 
-  // let scale = [
-  //     [0.9,0.9,0.9],
-  //     [0.9,0.9,0.9],
-  //     [0.9,0.9,0.9],
-  //     [0.9,0.9,0.9],
-  //     [0.9,0.9,0.9],
-  //   ];
+  let scale = [
+      [1,1,1],
+      [1,1,1],
+      [1,1,1],
+      [1,1,1],
+      [1,1,1],
+    ];
   let vartorso = 0;
   let torso=[];
   let vararms = 0;
@@ -191,7 +191,7 @@ update();
     const torso1 = torsoData1.scene;
     const torso2 = torsoData2.scene;
     const torso3 = torsoData3.scene;
-    //torso1.scale.set(scale, scale, scale);
+    //torso1.scale.set(scale[1][0],scale[1][1],scale[1][2]);
     //torso.position.set(0,0,0);
 
     //----Forearm----
@@ -382,9 +382,9 @@ folder1.add( params, 'z' );
 const folder2 = gui.addFolder( 'Torso' );
 folder2.close();
 folder2.add( params, 'HappyButton' ); // Button
-folder2.add( params, 'x', 0.8, 1 ).onChange( value => {
-  //scaleT = value;
-  //torso[vartorso].scale.set(scaleT,scaleT,scaleT );
+folder2.add( params, 'x', 0.8, 2 ).onChange( value => {
+  scale[1][0] = value;
+  torso[vartorso].scale.set(scale[1][0],scale[1][1],scale[1][2] );
 } );
 folder2.add( params, 'y' );
 folder2.add( params, 'z' );
