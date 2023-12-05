@@ -11,6 +11,7 @@ window.onload = function () {
 	let camera;
 	let renderer;
 	let model;
+  const varNum = [1,1,1,1,1]; //Variants for head, torso, arms, hips, legs
 	let gui1;
   let gui2;
   let gui3;
@@ -19,9 +20,9 @@ window.onload = function () {
   let clock;
   let canvas;
 
-  const state = { variant: "Default" };
+  let scale = 0.9;
 
-  const MODEL_PATH = "3dassets/body.glb";
+  const state = { variant: "Default" };
 
   init();
 
@@ -64,10 +65,9 @@ window.onload = function () {
 
 
 //-----------------Initialize-----------------
-function init() {
+async function init() {
 
   clock =  new THREE.Clock();
-
   // canvas = document.querySelector("#c");
 
 //----------------Scene, Renderer-----------------
@@ -130,13 +130,23 @@ scene.add(dirLight);   // Add directional Light to scene
 
 //--------------
 setEnvironment();
-loadModel();
+const { head, torso, arms, hips, legs } = await loadModels();
+scene.add(head, torso, arms, hips, legs);
+render();
+//loadVariants();
 loadGUI();
 update();
 }//init
 
 
 //---------------------GEOMETRIES---------------------
+async function loadModif(){
+  console.log("MODIFICATION!");
+  scene.remove(headData, torsoData, forearmData, hipsData, legData);
+  const { head, torso, arms, hips, legs } = await loadModels();
+  scene.add(head, torso, arms, hips, legs);
+  render();
+}
   //to set up environment
   function setEnvironment() {
     new RGBELoader()
@@ -149,43 +159,108 @@ update();
       });
   }
 
-//to load the model
-function loadModel() {
-    let loader = new GLTFLoader();
+  //to load the models
+  async function loadModels() {
+    const loader = new GLTFLoader();
+    
+    const [headData, torsoData, forearmData, hipsData, legData] = await Promise.all([
+    loader.loadAsync("3dassets/head_variant-"+ varNum[0] +".glb"),
+    loader.loadAsync("3dassets/torso_variant-"+ varNum[1] +".glb"),
+    loader.loadAsync("3dassets/forearms_variant-"+ varNum[2] +".glb"),
+    loader.loadAsync("3dassets/hips_variant-"+ varNum[3] +".glb"),
+    loader.loadAsync("3dassets/lowerLegs_variant-"+ varNum[4] +".glb")
+  
+    ]);
+    //----Head----
+    const head = headData.scene;
 
-    loader.load(MODEL_PATH, function (gltf) {  
+     //----Torso----
+     const torso = torsoData.scene;
+     torso.scale.set(scale, scale, scale);
+ //  torso.position.set(0,0,0);
 
-      model = gltf.scene;
-      model.scale.set(1, 1, 1);
+    //----Forearm----
+    const arms = forearmData.scene;
+    //----Hips----
+    const hips = hipsData.scene;
+    //----Legs----
+    const legs = legData.scene;
 
-      model.position.set(0,0,0);
-      scene.add(model);
+// //------------Texture Variant----------------
+// const parser = torsoData.parser;
+// let variantsExtension;
 
-      // Details of the KHR_materials_variants extension used here can be found below
-      // https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants
-      const parser = gltf.parser;
+// if ("gltfExtensions" in torsoData.userData) {
+//   variantsExtension =
+//     torsoData.userData.gltfExtensions["KHR_materials_variants"];
+// }
 
-      let variantsExtension;
+// if (variantsExtension != null) {
+//   const variants = variantsExtension.variants.map(
+//     (variant) => variant.name
+//   );
+//   const variantsCtrl = gui1
+//     .add(state, "variant", variants)
+//     .name("Variant");
 
-      if ("gltfExtensions" in gltf.userData) {
-        variantsExtension =
-          gltf.userData.gltfExtensions["KHR_materials_variants"];
-      }
+//   selectVariant(scene, parser, variantsExtension, state.variant);
 
-      if (variantsExtension != null) {
-        const variants = variantsExtension.variants.map(
-          (variant) => variant.name
-        );
-        const variantsCtrl = gui1
-          .add(state, "variant", variants)
-          .name("Variant");
+//   variantsCtrl.onChange((value) =>
+//     selectVariant(scene, parser, variantsExtension, value)
+//   );
+// }
+    
+    //Tell the await function when we are done here! :)
+    return {
+    head,
+    torso,
+    arms,
+    hips,
+    legs
+    };
+    
+    }
+    
 
-        selectVariant(scene, parser, variantsExtension, state.variant);
 
-        variantsCtrl.onChange((value) =>
-          selectVariant(scene, parser, variantsExtension, value)
-        );
-      }
+//to load the texture variants
+  // function loadVariants() {
+  //   let loader = new GLTFLoader();
+
+  //   loader.load(MODEL_PATH, function (gltf) {
+  //     // GUI
+  //     gui = new GUI();
+
+  //     model = gltf.scene;
+  //     model.scale.set(1, 1, 1);
+
+  //     model.position.set(0,0, 0);
+  //     scene.add(model);
+       // Details of the KHR_materials_variants extension used here can be found below
+       // https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants
+      // const parser = gltf.parser;
+
+      // let variantsExtension;
+
+      // if ("gltfExtensions" in gltf.userData) {
+      //   variantsExtension =
+      //     gltf.userData.gltfExtensions["KHR_materials_variants"];
+      // }
+
+      // if (variantsExtension != null) {
+      //   const variants = variantsExtension.variants.map(
+      //     (variant) => variant.name
+      //   );
+      //   const variantsCtrl = gui1
+      //     .add(state, "variant", variants)
+      //     .name("Variant");
+
+      //   selectVariant(scene, parser, variantsExtension, state.variant);
+
+      //   variantsCtrl.onChange((value) =>
+      //     selectVariant(scene, parser, variantsExtension, value)
+      //   );
+      // }
 
       //const texture = new THREE.TextureLoader().load("waterdudv.jpg");
       //  texture.wrapS = THREE.RepeatWrapping;
@@ -195,11 +270,34 @@ function loadModel() {
       //let material = new THREE.MeshBasicMaterial({map:texture});
 
       //let mat = new THREE.MeshPhongMaterial({ map: texture });
-      render();
-    });
-  } //load model
+       //render();
+   //} //load variants
 
 function loadGUI() {
+  const gui = new GUI( { title: "Noémie's GUI"});
+
+  //-----Noémie's GUIs-------
+  let params = {
+    myBoolean: true,
+    myString: 'lil-gui',
+    myNumber: 1,
+    myFunction: function() { alert( 'hi' ) },
+    number: scale,
+}
+  
+  gui.add( params, 'myBoolean' );  // Checkbox
+  gui.add( params, 'myFunction' ); // Button
+  gui.add( params, 'myString' );   // Text Field
+  gui.add( params, 'myNumber' );   // Number Field
+  gui.add( params, 'number', 0, 1 ).onChange( value => {
+    console.log( value );
+    scale = value;
+    console.log( scale );
+    loadModif();
+
+  } );
+
+
     let guiWidth = window.innerWidth * 0.2; // 20% of the screen width
     let guiHeight = window.innerHeight * 0.2; // 20% of the screen height
     let GUIbgColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
@@ -208,6 +306,7 @@ function loadGUI() {
 
     // Create a container div for gui1, gui2, and gui3
     let guiContainer = document.createElement('div');
+    guiContainer.setAttribute("id","guiContainer");
     guiContainer.style.position = 'absolute';
     guiContainer.style.right = `${containerOffset}px`; // Adjust the right position
     guiContainer.style.top = '20px'; // Adjust the top position
@@ -237,8 +336,10 @@ function loadGUI() {
     // gui1.domElement.style.top = '20px'; // Adjust the top position
 
 
+
     gui2.domElement.style.width = guiWidth + 'px';
     gui2.domElement.style.backgroundColor = GUIbgColor; 
+    
 
     gui3.domElement.style.width = guiWidth + 'px';
     gui3.domElement.style.backgroundColor = GUIbgColor; 
@@ -266,15 +367,15 @@ function loadGUI() {
 
     // in case resize window
     if (resizeRendererToDisplaySize(renderer)) {
-      console.log("resize");
+      //console.log("resize");
       const canvas = renderer.domElement;
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
-      console.log(canvas.clientWidth);
+      //console.log(canvas.clientWidth);
       camera.updateProjectionMatrix();
     }
 
     render();
-    console.log("in update");
+    //console.log("in update");
     requestAnimationFrame(update);
   } //update
 

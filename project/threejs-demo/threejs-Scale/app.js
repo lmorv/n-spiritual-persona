@@ -167,8 +167,8 @@ update();
     torso.scale.set(1, 1, 1);
 //  torso.position.set(0,0,0);
 
+//------------Texture Variant----------------
 const parser = torsoData.parser;
-
 let variantsExtension;
 
 if ("gltfExtensions" in torsoData.userData) {
