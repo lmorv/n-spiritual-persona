@@ -88,3 +88,10 @@ img{margin:2%;width:96%;}
     --widget-height: 50px;
     --font-size: 100%;
   }
+
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+  }

@@ -149,6 +149,7 @@ scene.add(head1,torso1,arms1,hips1,legs1);
 render();
 //loadVariants();
 loadGUI();
+// createSpiderChart();
 update();
 }//init
 
@@ -316,6 +317,18 @@ link.href = 'css/galleryStyle.css';
 // Append the link element to the head of the HTML document
 document.head.appendChild(link);
 
+// //------------d3 library reference (for spider chart)----------------
+
+// Create a <script> element
+const script = document.createElement('script');
+
+// Set the source URL to the D3.js library
+script.src = 'https://d3js.org/d3.v7.min.js';
+
+// Append the <script> element to the document body
+document.body.appendChild(script);
+
+
 function loadGUI() {
   const gui = new GUI( { title: "Torso"});
 
@@ -346,65 +359,141 @@ folder.add( params, 'x' );
 folder.add( params, 'y' );
 folder.add( params, 'z' );
 
-<<<<<<< Updated upstream
-=======
-    let guiWidth = window.innerWidth * 0.2; // 20% of the screen width
-    let guiHeight = window.innerHeight * 0.2; // 20% of the screen height
-    let GUIbgColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
-
-    let containerOffset = (-window.innerWidth) + 200;
-
-    // Create a container div for gui1, gui2, and gui3
-    let guiContainer = document.createElement('div');
+createSpiderChart();
     
-    guiContainer.setAttribute("id","guiContainer");
-    guiContainer.style.position = 'absolute';
-    guiContainer.style.right = `${containerOffset}px`; // Adjust the right position
-    guiContainer.style.top = '20px'; // Adjust the top position
-    guiContainer.style.backgroundColor = 'rgba(173, 255, 230, 0.3)';
-    // guiContainer.style.width = guiWidth + 'px'; 
-    // guiContainer.style.height = guiHeight + 'px';
-    document.getElementById("overlay").appendChild(guiContainer);
-
-    // declare GUI elements:
-     // Declare GUI elements and position them within the container
-     gui1 = new GUI({autoPlace: false});
-     gui1.domElement.style.position = 'relative'; // Position gui1 relative to the container
-     gui2 = new GUI({autoPlace: false});
-     gui2.domElement.style.position = 'relative'; // Position gui2 relative to the container
-     gui3 = new GUI({autoPlace: false});
-     gui3.domElement.style.position = 'relative'; // Position gui3 relative to the container
-     guiContainer.appendChild(gui1.domElement);
-     guiContainer.appendChild(gui2.domElement);
-     guiContainer.appendChild(gui3.domElement);
-
-    guiLeft = new GUI({ autoPlace: false });
-
-    // Style GUIs
-    gui1.domElement.style.width = guiWidth + 'px'; 
-    gui1.domElement.style.height = guiHeight + 'px'; 
-    gui1.domElement.style.backgroundColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
-    // gui1.domElement.style.top = '20px'; // Adjust the top position
-
-
-
-    gui2.domElement.style.width = guiWidth + 'px';
-    gui2.domElement.style.backgroundColor = GUIbgColor; 
-    
-
-    gui3.domElement.style.width = guiWidth + 'px';
-    gui3.domElement.style.backgroundColor = GUIbgColor; 
-
-    document.getElementById("overlay").appendChild(guiLeft.domElement); 
-    guiLeft.domElement.style.position = 'absolute';
-    guiLeft.domElement.style.left = '100px'; // Adjust the left position
-    guiLeft.domElement.style.top = '20px'; // Adjust the top position
-    guiLeft.domElement.style.width = guiWidth + 'px'; 
-    guiLeft.domElement.style.height = guiHeight + 'px';
-    guiLeft.domElement.style.backgroundColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
->>>>>>> Stashed changes
 }
 
+function createSpiderChart() {
+
+// // Create a div element
+// const svgContainer = document.createElement('div');
+
+// // Set the id attribute to 'svg-container'
+// svgContainer. = 'svg-container';
+
+// // Append the div element to the document body
+// document.body.appendChild(svgContainer);
+
+
+// Generate fake data:
+let data = [];
+let features = ["A", "B", "C", "D", "E", "F"];
+//generate the data
+for (var i = 0; i < 3; i++){
+    var point = {}
+    //each feature will be a random number from 1-9
+    features.forEach(f => point[f] = 1 + Math.random() * 8);
+    data.push(point);
+}
+console.log(data);
+
+// Use d3.select to create an SVG element in the body to create the chart inside it.
+let width = 400;
+let height = 400;
+let svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Use scaleLinear() helper function to re-map data values to their radial distance to the center of the chart:
+let radialScale = d3.scaleLinear()
+    .domain([0, 10])
+    .range([0, 250]);
+let ticks = [2, 4, 6, 8, 10, 12]; // Array of tick marks to be displayed on the chart
+
+// Draw the circles at tick mark coordinates inside the SVG element:
+svg.selectAll("circle")
+    .data(ticks)
+    .join(  // d3.js data binding, look it up.
+        enter => enter.append("circle")
+            .attr("cx", width / 2)    //.Attr can be called on select method instrcuctions to  
+            .attr("cy", height / 2)  // set SVG attributes by name to a specified value
+            .attr("fill", "none")
+            .attr("stroke", "gray")
+            .attr("r", d => radialScale(d))
+    );
+
+// Add text labels for every tick:
+svg.selectAll(".ticklabel")
+    .data(ticks)
+    .join(
+        enter => enter.append("text")
+            .attr("class", "ticklabel")
+            .attr("x", width / 2 + 5)
+            .attr("y", d => height / 2 - radialScale(d))
+            .text(d => d.toString())
+    );
+
+// Map feature axis lines from polar coords to SVG coords 
+function angleToCoordinate(angle, value){
+    let x = Math.cos(angle) * radialScale(value);
+    let y = Math.sin(angle) * radialScale(value);
+    return {"x": width / 2 + x, "y": height / 2 - y}; // Function outputs a json object with an x and y values.
+}
+
+// Iterate through the array of feature names to draw the text and the label. And calculate angle based on number of features
+let featureData = features.map((f, i) => {
+    let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
+    return {
+        "name": f,
+        "angle": angle,
+        "line_coord": angleToCoordinate(angle, 12),
+        "label_coord": angleToCoordinate(angle, 12.5)
+    };
+});
+
+// draw axis line
+svg.selectAll("line")
+    .data(featureData)
+    .join(
+        enter => enter.append("line")
+            .attr("x1", width / 2)
+            .attr("y1", height / 2)
+            .attr("x2", d => d.line_coord.x)
+            .attr("y2", d => d.line_coord.y)
+            .attr("stroke","black")
+    );
+
+// draw axis label
+svg.selectAll(".axislabel")
+    .data(featureData)
+    .join(
+        enter => enter.append("text")
+            .attr("x", d => d.label_coord.x)
+            .attr("y", d => d.label_coord.y)
+            .text(d => d.name)
+    );
+
+// Generate the coord for the vertices of each shape
+let line = d3.line()
+    .x(d => d.x)
+    .y(d => d.y);
+let colors = ["darkorange", "red", "navy"];
+
+// Iterate through the fields in each data point in order and use the field name and value to calculate the coordinate for that attribute:
+function getPathCoordinates(data_point){
+    let coordinates = [];
+    for (var i = 0; i < features.length; i++){
+        let ft_name = features[i];
+        let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
+        coordinates.push(angleToCoordinate(angle, data_point[ft_name])); // coords are pushed into an array and returned.
+    }
+    return coordinates;
+}
+
+// draw the SVG path element
+svg.selectAll("path")
+    .data(data)
+    .join(
+        enter => enter.append("path")
+            .datum(d => getPathCoordinates(d))
+            .attr("d", line)
+            .attr("stroke-width", 3)
+            .attr("stroke", (_, i) => colors[i])
+            .attr("fill", (_, i) => colors[i])
+            .attr("stroke-opacity", 1)
+            .attr("opacity", 0.5)
+    );
+}
 
 //-------------Render-------------
   function render() {
