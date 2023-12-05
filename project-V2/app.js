@@ -392,6 +392,29 @@ folder1.add( params, 'x', 0.8, 1  ).onChange( value => {
 folder1.add( params, 'y' );
 folder1.add( params, 'z' );
 
+const folder2 = gui.addFolder( 'Torso' );
+folder2.close();
+folder2.add( params, 'HappyButton' ); // Button
+folder2.add( params, 'x', 0.8, 1 ).onChange( value => {
+  //scaleT = value;
+  //torso[vartorso].scale.set(scaleT,scaleT,scaleT );
+} );
+folder2.add( params, 'y' );
+folder2.add( params, 'z' );
+
+const folder3 = gui.addFolder( 'Arms' );
+folder3.close();
+folder3.add( params, 'HappyButton2' ); // Button
+
+const folder4 = gui.addFolder( 'Hips' );
+folder4.close();
+folder4.add( params, 'HappyButton3' ); // Button
+
+const folder5 = gui.addFolder( 'Legs' );
+folder5.close();
+folder5.add( params, 'HappyButton4' ); // Button
+}
+
 createSpiderChart();
     
 }
