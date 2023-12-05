@@ -10,7 +10,9 @@
 
 
 /* css for the initial form*/
-body{background-color: --back;}
+body{
+  background-color: rgb(178, 205, 150);
+}
 label{display: inline-flex; width:30%;font-size:1vw; font-weight: bold; align: center; margin-top:1%; }
 textarea{vertical-align: top;width:50%;margin-left:2%;  }
 input{margin-left:2%;width:50%;}
@@ -25,7 +27,9 @@ h3{padding:5px;text-align: center; width:50%;font-family:arial;color:var(--sup);
 #mButton a:hover{background:red;text-decoration: none;color:white;}
 
 
-h1{padding:5px;text-align: center; width:50%;font-family:arial;color:var(--sup);margin:0 auto; margin-top:5%;
+h1{padding:5px;text-align: center; width:50%;font-family:arial;
+  color:var(--sup);
+  margin:0 auto; margin-top:5%;
   font-size: 150px;
 }
 
@@ -118,4 +122,62 @@ img{margin:2%;width:96%;}
     font-size: 70px;
     width: 510px;
     height: 400px;
+    background-color: beige;
+
+    border-radius: 17px;
+    border: 4px;
+  
   }
+
+  #nav-butt:hover {
+    background-color: rgb(225, 145, 172);
+  }
+
+/* Styles for creator navigation */
+  #nav-butt-creator {
+
+    position: absolute;
+    top: 600px;
+    left: 20px;
+    z-index: 1000;
+
+    font-size: 20px;
+    width: 200px;
+    height: 70px;
+    background-color: beige;
+
+    border-radius: 17px;
+    border: 4px;
+  
+  }
+
+  #nav-butt-creator:hover {
+    background-color: rgb(225, 145, 172);
+  }
+
+  /* Styles for image gallery */
+.image-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.image-container {
+  margin: 0 5px;
+  overflow: hidden;
+  width: 400px; /* Initial width */
+  height: 550px; /* Initial height */
+  border-radius: 30px;
+  transition: width 0.3s, height 0.3s; /* Smooth transition effect */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Grow effect on hover */
+.image-container:hover {
+  width: 450px; /* Change width on hover */
+  height: 600px; /* Change height on hover */
+}

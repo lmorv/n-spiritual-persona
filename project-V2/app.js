@@ -391,8 +391,23 @@ folder5.add( params, 'z', 0.8, 2 ).onChange( value => {
 } );
 
 createSpiderChart();
+createNavButtons();
 }
 
+function createNavButtons() {
+
+  // Creating a button element
+  const button = document.createElement('button');
+  button.id = 'nav-butt-creator';
+  button.textContent = 'Go to gallery';
+
+  // Adding a click event listener to the button
+  button.addEventListener('click', function() {
+    window.location.href = 'n-spiritual-gallery.html'; // Redirects to the specified page
+  });
+  document.body.appendChild(button);
+
+}
 
 function createSpiderChart() {
 
