@@ -29,14 +29,10 @@ window.onload = function () {
   let hips=[];
   let varlegs = 0;
   let legs=[];
+  let color = "rgb(202, 198, 255)";
 
-	let gui1;
-  let gui2;
-  let gui3;
-  let guiLeft;
   let controls;
   let clock;
-  let canvas;
 
   
 
@@ -90,7 +86,7 @@ async function init() {
 
 //----------------Scene, Renderer-----------------
 scene = new THREE.Scene();                    //create a scene
-scene.background = new THREE.Color("rgb(202, 198, 255)");
+scene.background = new THREE.Color(color);
 // scene.fog = new THREE.Fog(backgroundColor, 60, 100);
 
 renderer = new THREE.WebGLRenderer();
@@ -292,6 +288,7 @@ function loadGUI() {
     myBoolean: true,
     Persona: 'NAME ME',
     myNumber: 1,
+    color: 'rgb(170, 0, 255)',
     Transmorgify: function() { modifTorso(); },
     Switch_a_roo: function() { modifArms(); },
     Happy_Button: function() { modifHips(); },
@@ -304,6 +301,10 @@ function loadGUI() {
   
   //gui.add( params, 'myBoolean' ).onChange(value =>{});  // Checkbox
   gui.add( params, 'Persona' );   // Text Field
+  gui.addColor( params, 'color' ).onChange( value => {
+    color = value;
+    scene.background = new THREE.Color(color);
+  } );
   //gui.add( params, 'myNumber' );   // Number Field
   //gui.add( params, 'number', 0.8, 1 ).onChange( value => {
     //scale[1] = value;
