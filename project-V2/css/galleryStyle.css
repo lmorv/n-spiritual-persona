@@ -1,0 +1,73 @@
+:root {
+    --main: rgb(221, 122, 224);
+    --sec: rgb(115, 34, 118);
+    --sup: rgb(70, 37, 71);
+    --acc: rgb(224, 202, 122);
+    --back: rgb(221, 177, 226);
+
+  }
+
+
+
+/* css for the initial form*/
+body{background-color: --back;}
+label{display: inline-flex; width:30%;font-size:1vw; font-weight: bold; align: center; margin-top:1%; }
+textarea{vertical-align: top;width:50%;margin-left:2%;  }
+input{margin-left:2%;width:50%;}
+fieldset{background-color:var(--main);width:50%;color: var(black);font-family:arial;margin:0 auto;margin-top:2%;    border-radius: 15px; }
+select{width:50%;font-size:10pt;}
+#buttonS{margin:0;width:auto;font-size:1vw;}
+.sub{background-color:var(--back);opacity:.85;padding:2%;}
+h3{padding:5px;text-align: center; width:50%;font-family:arial;color:var(--sup);margin:0 auto; margin-top:5%;}
+#error{margin: 0 auto;color:white; width:50%;padding:1%;background:grey;}
+#mButton{margin: 0 auto;color:white; width:50%;padding:1%;background:white;display:none;}
+#mButton a{text-decoration: none; color:Black;}
+#mButton a:hover{background:red;text-decoration: none;color:white;}
+
+
+
+
+/* css for displaying the output*/
+#back{display:flex;flex-wrap: wrap;width:100%;padding-left:5%; }
+.outer{background-color:var(--main);width:25%;margin:2%; border-radius: 15px; }
+.content{background-color: var(--back);width:100%; }
+.content p{color:white;padding:2%;background:var(--sec);font-family:arial;}
+img{margin:2%;width:96%;}
+
+/* From w3 school example */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #ffffff;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: var(--sup);
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background:var(--sup);
+    cursor: pointer;
+  }
+
+  #result { display: flex; flex-wrap: wrap;}
+
+  #nav-container {
+    text-align: center;
+    font-size: 70px;
+  }

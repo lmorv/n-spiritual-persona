@@ -1,0 +1,23 @@
+{"artist":"Anna","aterms":"yes","amist":"calming","acolor":"#50fb83","arainbow":"end","aghost":"24","aclouds":"bubbly","aboom":"84","aplant":"Eucalyptus"}
+{"artist":"Indigo","aterms":"no","amist":"makes me mad","acolor":"#421075","arainbow":"end","aghost":"100","aclouds":"spiky","aboom":"1","aplant":"Dandelion"}
+{"artist":"Emile","aterms":"yes","amist":"calming","acolor":"#9e618e","arainbow":"end","aghost":"71","aclouds":"bubbly","aboom":"12","aplant":"Bamboo"}
+{"artist":"leo","aterms":"yes","amist":"makes me mad","acolor":"#943dbd","arainbow":"end","aghost":"3","aclouds":"spiky","aboom":"85","aplant":"lettuce"}
+{"artist":"leo","aterms":"yes","amist":"makes me mad","acolor":"#943dbd","arainbow":"end","aghost":"3","aclouds":"spiky","aboom":"85","aplant":"lettuce"}
+{"artist":"leo","aterms":"yes","amist":"makes me mad","acolor":"#943dbd","arainbow":"end","aghost":"3","aclouds":"spiky","aboom":"85","aplant":"lettuce"}
+{"artist":"leo","aterms":"yes","amist":"makes me mad","acolor":"#943dbd","arainbow":"end","aghost":"3","aclouds":"spiky","aboom":"85","aplant":"lettuce"}
+{"artist":"doope","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"plant"}
+{"artist":"doope","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"plant"}
+{"artist":"filename","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fongus"}
+{"artist":"filename","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fongus"}
+{"artist":"face","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"plant face"}
+{"artist":"face","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"plant face"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
