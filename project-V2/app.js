@@ -413,23 +413,12 @@ folder4.add( params, 'HappyButton3' ); // Button
 const folder5 = gui.addFolder( 'Legs' );
 folder5.close();
 folder5.add( params, 'HappyButton4' ); // Button
-}
 
 createSpiderChart();
-    
 }
 
+
 function createSpiderChart() {
-
-// // Create a div element
-// const svgContainer = document.createElement('div');
-
-// // Set the id attribute to 'svg-container'
-// svgContainer. = 'svg-container';
-
-// // Append the div element to the document body
-// document.body.appendChild(svgContainer);
-
 
 // Generate fake data:
 let data = [];
@@ -444,8 +433,8 @@ for (var i = 0; i < 3; i++){
 console.log(data);
 
 // Use d3.select to create an SVG element in the body to create the chart inside it.
-let width = 400;
-let height = 400;
+let width = 500;
+let height = 500;
 let svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
@@ -464,7 +453,7 @@ svg.selectAll("circle")
             .attr("cx", width / 2)    //.Attr can be called on select method instrcuctions to  
             .attr("cy", height / 2)  // set SVG attributes by name to a specified value
             .attr("fill", "none")
-            .attr("stroke", "gray")
+            .attr("stroke", "yellow")
             .attr("r", d => radialScale(d))
     );
 
