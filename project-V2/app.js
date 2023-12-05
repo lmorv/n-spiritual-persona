@@ -344,9 +344,9 @@ link.href = 'css/galleryStyle.css';
 document.head.appendChild(link);
 
 function loadGUI() {
-  const gui = new GUI( { title: "Torso"});
+  const gui = new GUI( { title: "Awsominator"});
 
-  //-----Torso GUI-------
+  //-----GUI------
   let params = {
     myBoolean: true,
     myString: 'lil-gui',
@@ -372,7 +372,7 @@ function loadGUI() {
 // nested controllers
 const folder1 = gui.addFolder( 'Head' );
 folder1.close();
-folder1.add( params, 'x', 0.8, 1  ).onChange( value => {
+folder1.add( params, 'x', 0.5, 2 ).onChange( value => {
   //scale[0] = value;
   //head[varhead].scale.set(scale, scale, scale);
 } );
@@ -382,12 +382,18 @@ folder1.add( params, 'z' );
 const folder2 = gui.addFolder( 'Torso' );
 folder2.close();
 folder2.add( params, 'HappyButton' ); // Button
-folder2.add( params, 'x', 0.8, 2 ).onChange( value => {
+folder2.add( params, 'x', 0.5, 2 ).onChange( value => {
   scale[1][0] = value;
   torso[vartorso].scale.set(scale[1][0],scale[1][1],scale[1][2] );
 } );
-folder2.add( params, 'y' );
-folder2.add( params, 'z' );
+folder2.add( params, 'y', 0.5, 2 ).onChange( value => {
+  scale[1][2] = value;
+  torso[vartorso].scale.set(scale[1][0],scale[1][1],scale[1][2] );
+} );
+folder2.add( params, 'z', 0.8, 1.2 ).onChange( value => {
+  scale[1][1] = value;
+  torso[vartorso].scale.set(scale[1][0],scale[1][1],scale[1][2] );
+} );
 
 const folder3 = gui.addFolder( 'Arms' );
 folder3.close();
