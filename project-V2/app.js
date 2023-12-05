@@ -303,6 +303,19 @@ console.log(vartorso);
        //render();
    //} //load variants
 
+// //------------style sheet reference----------------
+
+// Create a link element
+var link = document.createElement('link');
+
+// Set the attributes for the link element
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = 'css/galleryStyle.css';
+
+// Append the link element to the head of the HTML document
+document.head.appendChild(link);
+
 function loadGUI() {
   const gui = new GUI( { title: "Torso"});
 
@@ -333,6 +346,63 @@ folder.add( params, 'x' );
 folder.add( params, 'y' );
 folder.add( params, 'z' );
 
+<<<<<<< Updated upstream
+=======
+    let guiWidth = window.innerWidth * 0.2; // 20% of the screen width
+    let guiHeight = window.innerHeight * 0.2; // 20% of the screen height
+    let GUIbgColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
+
+    let containerOffset = (-window.innerWidth) + 200;
+
+    // Create a container div for gui1, gui2, and gui3
+    let guiContainer = document.createElement('div');
+    
+    guiContainer.setAttribute("id","guiContainer");
+    guiContainer.style.position = 'absolute';
+    guiContainer.style.right = `${containerOffset}px`; // Adjust the right position
+    guiContainer.style.top = '20px'; // Adjust the top position
+    guiContainer.style.backgroundColor = 'rgba(173, 255, 230, 0.3)';
+    // guiContainer.style.width = guiWidth + 'px'; 
+    // guiContainer.style.height = guiHeight + 'px';
+    document.getElementById("overlay").appendChild(guiContainer);
+
+    // declare GUI elements:
+     // Declare GUI elements and position them within the container
+     gui1 = new GUI({autoPlace: false});
+     gui1.domElement.style.position = 'relative'; // Position gui1 relative to the container
+     gui2 = new GUI({autoPlace: false});
+     gui2.domElement.style.position = 'relative'; // Position gui2 relative to the container
+     gui3 = new GUI({autoPlace: false});
+     gui3.domElement.style.position = 'relative'; // Position gui3 relative to the container
+     guiContainer.appendChild(gui1.domElement);
+     guiContainer.appendChild(gui2.domElement);
+     guiContainer.appendChild(gui3.domElement);
+
+    guiLeft = new GUI({ autoPlace: false });
+
+    // Style GUIs
+    gui1.domElement.style.width = guiWidth + 'px'; 
+    gui1.domElement.style.height = guiHeight + 'px'; 
+    gui1.domElement.style.backgroundColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
+    // gui1.domElement.style.top = '20px'; // Adjust the top position
+
+
+
+    gui2.domElement.style.width = guiWidth + 'px';
+    gui2.domElement.style.backgroundColor = GUIbgColor; 
+    
+
+    gui3.domElement.style.width = guiWidth + 'px';
+    gui3.domElement.style.backgroundColor = GUIbgColor; 
+
+    document.getElementById("overlay").appendChild(guiLeft.domElement); 
+    guiLeft.domElement.style.position = 'absolute';
+    guiLeft.domElement.style.left = '100px'; // Adjust the left position
+    guiLeft.domElement.style.top = '20px'; // Adjust the top position
+    guiLeft.domElement.style.width = guiWidth + 'px'; 
+    guiLeft.domElement.style.height = guiHeight + 'px';
+    guiLeft.domElement.style.backgroundColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
+>>>>>>> Stashed changes
 }
 
 

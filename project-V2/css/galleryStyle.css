@@ -71,3 +71,20 @@ img{margin:2%;width:96%;}
     text-align: center;
     font-size: 70px;
   }
+
+  .lil-gui { 
+    margin-top: 100px;
+
+    --background-color: rgba(216, 66, 21, 0.8);
+    --widget-color: rgba(22, 170, 186, 0.6);
+    --title-background-color: rgba(4, 49, 54, 0.8);
+
+    --padding: 10px;
+    
+    --width: 30%;
+    --spacing: 20px;
+	  --name-width: 40%;
+    --title-height: 200px;
+    --widget-height: 50px;
+    --font-size: 100%;
+  }
