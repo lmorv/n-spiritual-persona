@@ -379,65 +379,6 @@ folder1.add( params, 'x', 0.8, 1  ).onChange( value => {
 folder1.add( params, 'y' );
 folder1.add( params, 'z' );
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-    let guiWidth = window.innerWidth * 0.2; // 20% of the screen width
-    let guiHeight = window.innerHeight * 0.2; // 20% of the screen height
-    let GUIbgColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
-
-    let containerOffset = (-window.innerWidth) + 200;
-
-    // Create a container div for gui1, gui2, and gui3
-    let guiContainer = document.createElement('div');
-    
-    guiContainer.setAttribute("id","guiContainer");
-    guiContainer.style.position = 'absolute';
-    guiContainer.style.right = `${containerOffset}px`; // Adjust the right position
-    guiContainer.style.top = '20px'; // Adjust the top position
-    guiContainer.style.backgroundColor = 'rgba(173, 255, 230, 0.3)';
-    // guiContainer.style.width = guiWidth + 'px'; 
-    // guiContainer.style.height = guiHeight + 'px';
-    document.getElementById("overlay").appendChild(guiContainer);
-
-    // declare GUI elements:
-     // Declare GUI elements and position them within the container
-     gui1 = new GUI({autoPlace: false});
-     gui1.domElement.style.position = 'relative'; // Position gui1 relative to the container
-     gui2 = new GUI({autoPlace: false});
-     gui2.domElement.style.position = 'relative'; // Position gui2 relative to the container
-     gui3 = new GUI({autoPlace: false});
-     gui3.domElement.style.position = 'relative'; // Position gui3 relative to the container
-     guiContainer.appendChild(gui1.domElement);
-     guiContainer.appendChild(gui2.domElement);
-     guiContainer.appendChild(gui3.domElement);
-
-    guiLeft = new GUI({ autoPlace: false });
-
-    // Style GUIs
-    gui1.domElement.style.width = guiWidth + 'px'; 
-    gui1.domElement.style.height = guiHeight + 'px'; 
-    gui1.domElement.style.backgroundColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
-    // gui1.domElement.style.top = '20px'; // Adjust the top position
-
-
-
-    gui2.domElement.style.width = guiWidth + 'px';
-    gui2.domElement.style.backgroundColor = GUIbgColor; 
-    
-
-    gui3.domElement.style.width = guiWidth + 'px';
-    gui3.domElement.style.backgroundColor = GUIbgColor; 
-
-    document.getElementById("overlay").appendChild(guiLeft.domElement); 
-    guiLeft.domElement.style.position = 'absolute';
-    guiLeft.domElement.style.left = '100px'; // Adjust the left position
-    guiLeft.domElement.style.top = '20px'; // Adjust the top position
-    guiLeft.domElement.style.width = guiWidth + 'px'; 
-    guiLeft.domElement.style.height = guiHeight + 'px';
-    guiLeft.domElement.style.backgroundColor = 'rgba(173, 216, 230, 0.7)'; // Light teal with transparency
->>>>>>> Stashed changes
-=======
 const folder2 = gui.addFolder( 'Torso' );
 folder2.close();
 folder2.add( params, 'HappyButton' ); // Button
@@ -459,7 +400,6 @@ folder4.add( params, 'HappyButton3' ); // Button
 const folder5 = gui.addFolder( 'Legs' );
 folder5.close();
 folder5.add( params, 'HappyButton4' ); // Button
->>>>>>> Stashed changes
 }
 
 
