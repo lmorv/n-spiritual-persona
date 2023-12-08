@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "project/n-spiritual Persona.md",
+                "file": "process/why.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project/n-spiritual Persona.md",
+                "file": "process/why.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "project/n-spiritual Persona.md",
+                "file": "process/why.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "project/n-spiritual Persona.md"
+                "file": "process/why.md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "0f48ce7effc9e1f8",
   "lastOpenFiles": [
-    "project/ComponentsDiagram.png",
     "project/n-spiritual Persona.md",
+    "project/ComponentsDiagram.png",
     "README.md",
     "process/noemie-journal.md",
     "process/noemie-journal",
@@ -160,7 +160,7 @@
     "art-source/nsp_storyboard-5.png",
     "process/images/moodboard-1.png",
     "process/images/ideation-1.png",
-    "process/leo-why.md",
+    "process/why.md",
     "process/leo-todo.md",
     "process/leo-journal.md",
     "Untitled.md",

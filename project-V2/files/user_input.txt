@@ -21,3 +21,11 @@
 {"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
 {"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
 {"artist":"oooo","aterms":null,"amist":null,"acolor":"#ff0020","arainbow":null,"aghost":"50","aclouds":null,"aboom":"50","aplant":"fern"}
+{"artist":"king of the bongo","aterms":"yes","amist":"calming","acolor":"#00f03c","arainbow":"end","aghost":"100","aclouds":"bubbly","aboom":"45","aplant":"dandelion"}
+{"artist":"frankeeey","aterms":"yes","amist":"calming","acolor":"#582da9","arainbow":"end","aghost":"47","aclouds":"bubbly","aboom":"100","aplant":"tropical"}
+{"artist":"blerp","aterms":"yes","amist":"calming","acolor":"#ffffff","arainbow":"end","aghost":"97","aclouds":"bubbly","aboom":"11","aplant":"aloe"}
+{"artist":"SqualinaTralala","aterms":"no","amist":"calming","acolor":"#000000","arainbow":"end","aghost":"80","aclouds":"bubbly","aboom":"100","aplant":"cactus"}
+{"artist":"N-Mariam","aterms":"no","amist":"calming","acolor":"#f00000","arainbow":"end","aghost":"13","aclouds":"spiky","aboom":"100","aplant":"phothos"}
+{"artist":"IEatCars","aterms":"no","amist":"calming","acolor":"#fee6a4","arainbow":"end","aghost":"92","aclouds":"bubbly","aboom":"84","aplant":"one that talks"}
+{"artist":"IEatCars","aterms":"no","amist":"calming","acolor":"#fee6a4","arainbow":"end","aghost":"92","aclouds":"bubbly","aboom":"84","aplant":"one that talks"}
+{"artist":"penguin","aterms":"yes","amist":"calming","acolor":"#ff9238","arainbow":"end","aghost":"78","aclouds":"bubbly","aboom":"10","aplant":"cactus"}
