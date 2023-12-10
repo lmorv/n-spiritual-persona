@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "9f5b49d33c977b5e",
@@ -149,8 +150,8 @@
   "active": "0f48ce7effc9e1f8",
   "lastOpenFiles": [
     "project/n-spiritual Persona.md",
-    "process/why.md",
     "project/ComponentsDiagram.png",
+    "process/why.md",
     "README.md",
     "process/noemie-journal.md",
     "process/noemie-journal",
