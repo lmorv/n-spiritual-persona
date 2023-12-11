@@ -22,6 +22,8 @@ Three.js is a open-source JavaScript library that uses WebGL to render 3D graphi
 ### Blender
 Three.js also allowed us to use Blender to develop the shapes. It is a pretty advanced open-source software that is accessible to new users and powerful enough to be used by professionals.  Blender can be used to create 3D assets and carry information like size, position, color and texture variants easily to the web. All the character elements where created in Blender using polygon modeling and sculpting techniques, then exported as .glb asset files for use in the web.
 
+
+
 ### The D3.js API | Radar/Spider Chart
 The data visualization element of N-Spiritual Persona is made with the D3.js API, Following this tutorial by DANNY YANG: https://yangdanny97.github.io/blog/2019/03/01/D3-Spider-Chart. The data is randomly generated as part of the code that implements the spider chart rendering. This sketch is then added to the interface of the three.js scene with absolute positioning and a defined z-index to ensure it displays on top of all other elements. 
 In a future iteration of the project we hope to have the chart generation driven by user input data from the questionnaire/ personality test.  A more sophisticated approach --exemplary of what we're aiming for-- by Nadieh Bremer can be found here:  https://www.visualcinnamon.com/2015/10/different-look-d3-radar-chart/.
